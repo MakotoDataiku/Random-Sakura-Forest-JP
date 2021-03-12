@@ -1,0 +1,31 @@
+{
+  "type": "metrics",
+  "params": {
+    "objectSmartId": "random_sakura_forest_prepared",
+    "objectType": "DATASET",
+    "metricId": "python:開花日:大分の開花日"
+  },
+  "owner": "mmiyazaki",
+  "listed": false,
+  "name": "開花日 (大分の開花日) of random_sakura_forest_prepared",
+  "dashboardCreationId": "rIMln0K",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614860829576
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614860829576
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

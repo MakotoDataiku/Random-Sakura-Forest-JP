@@ -1,0 +1,29 @@
+{
+  "type": "saved-model_report",
+  "params": {
+    "savedModelSmartId": "O6X7tHP6"
+  },
+  "owner": "mmiyazaki",
+  "listed": false,
+  "name": "Random Sakura Forest (Cosine) table",
+  "dashboardCreationId": "rIMln0K",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614948315595
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614948315595
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

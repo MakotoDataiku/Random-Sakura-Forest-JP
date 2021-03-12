@@ -1,0 +1,31 @@
+{
+  "type": "metrics",
+  "params": {
+    "objectSmartId": "future_kaikabi",
+    "objectType": "DATASET",
+    "metricId": "python:開花日:東京の開花日"
+  },
+  "owner": "mmiyazaki",
+  "listed": false,
+  "name": "開花日 (東京の開花日) of future_kaikabi",
+  "dashboardCreationId": "rIMln0K",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614300680610
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614300680610
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

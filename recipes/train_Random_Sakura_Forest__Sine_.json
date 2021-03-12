@@ -1,0 +1,56 @@
+{
+  "type": "prediction_training",
+  "neverRecomputeExistingPartitions": false,
+  "optionalDependencies": false,
+  "params": {
+    "containerSelection": {
+      "containerMode": "INHERIT"
+    }
+  },
+  "customMeta": {
+    "kv": {}
+  },
+  "redispatchPartitioning": false,
+  "maxRunningActivities": 0,
+  "inputs": {
+    "main": {
+      "items": [
+        {
+          "ref": "days_till_bloom_cos_sin",
+          "deps": []
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "main": {
+      "items": [
+        {
+          "ref": "Zs6dqlBs",
+          "appendMode": false
+        }
+      ]
+    }
+  },
+  "versionTag": {
+    "versionNumber": 3,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1615383662568
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614941527573
+  },
+  "tags": [
+    "過去の開花日でモデル学習"
+  ],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

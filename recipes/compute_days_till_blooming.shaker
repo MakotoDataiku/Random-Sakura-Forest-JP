@@ -1,0 +1,149 @@
+{
+  "columnsSelection": {
+    "mode": "ALL"
+  },
+  "explorationSampling": {
+    "_refreshTrigger": 1,
+    "selection": {
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "latestPartitionsN": 1,
+      "maxRecords": 10000,
+      "ordering": {
+        "rules": [],
+        "enabled": false
+      },
+      "withinFirstN": -1,
+      "partitionSelectionMethod": "ALL",
+      "maxStoredBytes": 104857600,
+      "targetRatio": 0.02,
+      "maxReadUncompressedBytes": -1,
+      "samplingMethod": "RANDOM_FIXED_RATIO",
+      "timeout": -1
+    },
+    "autoRefreshSample": false
+  },
+  "explorationFilters": [],
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "DateParser",
+      "params": {
+        "outCol": "開花日_parsed",
+        "formats": [
+          "yyyy-MM-dd HH:mm:ssZ"
+        ],
+        "columns": [
+          "開花日"
+        ],
+        "timezone_id": "UTC",
+        "appliesTo": "SINGLE_COLUMN",
+        "lang": "auto"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "DateDifference",
+      "params": {
+        "output": "開花日までの日数",
+        "input2": "年月日_parsed",
+        "outputUnit": "DAYS",
+        "input1": "開花日_parsed",
+        "compareTo": "COLUMN",
+        "reverse": true
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "DateComponentsExtractor",
+      "params": {
+        "outMonthColumn": "",
+        "outYearColumn": "開花年",
+        "column": "開花日_parsed",
+        "timezone_id": "UTC",
+        "outDayColumn": ""
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "DateDifference",
+      "params": {
+        "output": "年初からの日数",
+        "input2": "開花年",
+        "outputUnit": "DAYS",
+        "input1": "開花日_parsed",
+        "compareTo": "COLUMN",
+        "reverse": true
+      },
+      "alwaysShowComment": false
+    }
+  ],
+  "maxProcessedMemTableBytes": -1,
+  "previewMode": "ALL_ROWS",
+  "vizSampling": {
+    "_refreshTrigger": 0,
+    "autoRefreshSample": false
+  },
+  "analysisColumnData": {},
+  "columnWidthsByName": {
+    "date": 100,
+    "blooming_day": 190,
+    "year": 100,
+    "precip_total": 105,
+    "状況": 100,
+    "temp_high": 100,
+    "場所": 100,
+    "降水量合計": 100,
+    "月": 100,
+    "最低気温": 100,
+    "開花日_parsed_month": 135,
+    "blooming_day_parsed": 183,
+    "temp_ave": 100,
+    "開花日_parsed": 183,
+    "place": 100,
+    "temp_low": 100,
+    "開花日_parsed_year": 128,
+    "年初からの日数_暦年平均": 141,
+    "開花日": 190,
+    "date_parsed": 232,
+    "flower_status": 113,
+    "平均気温": 100,
+    "days_till_bloom": 128,
+    "日": 100,
+    "年月日_parsed": 232,
+    "最高気温": 100,
+    "開花日までの日数": 249,
+    "開花年": 100,
+    "年": 100,
+    "開花日_parsed_day": 120,
+    "daylight": 100,
+    "since_blooming_day_parsed_days": 240,
+    "日照時間": 100,
+    "年初からの日数": 239,
+    "年月日": 100
+  },
+  "sorting": [],
+  "globalSearchQuery": "",
+  "coloring": {
+    "scheme": "MEANING_AND_STATUS",
+    "individualColumns": [],
+    "valueColoringMode": "HASH"
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "script": {
+    "steps": [],
+    "maxProcessedMemTableBytes": -1,
+    "columnsSelection": {
+      "mode": "ALL"
+    },
+    "columnWidthsByName": {},
+    "coloring": {
+      "scheme": "MEANING_AND_STATUS",
+      "individualColumns": [],
+      "valueColoringMode": "HASH"
+    },
+    "sorting": [],
+    "analysisColumnData": {},
+    "explorationSampling": {
+      "selection": {
+        "maxStoredBytes": 104857600,
+        "timeout": -1,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "vizSampling": {
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "exploreUIParams": {},
+    "globalSearchQuery": "",
+    "explorationFilters": [],
+    "previewMode": "ALL_ROWS"
+  },
+  "charts": [
+    {
+      "copySelectionFromScript": true,
+      "engineType": "LINO",
+      "def": {
+        "type": "lines",
+        "variant": "normal",
+        "name": "「開花日までの日数」の推移は滑らかでない",
+        "userEditedName": true,
+        "genericDimension0": [
+          {
+            "column": "年月日_parsed",
+            "type": "DATE",
+            "numParams": {
+              "emptyBinsMode": "AVERAGE"
+            },
+            "dateParams": {
+              "mode": "AUTOMATIC"
+            },
+            "maxValues": 0,
+            "generateOthersCategory": true,
+            "oneTickPerBin": false,
+            "filters": [],
+            "isA": "dimension",
+            "possibleSorts": [
+              {
+                "type": "NATURAL",
+                "label": "Natural ordering",
+                "sortAscending": true
+              },
+              {
+                "type": "AGGREGATION",
+                "measureIdx": 0,
+                "label": "Average of 開花日までの日数, descending"
+              },
+              {
+                "type": "AGGREGATION",
+                "measureIdx": 0,
+                "label": "Average of 開花日までの日数, ascending",
+                "sortAscending": true
+              }
+            ],
+            "sort": {
+              "type": "NATURAL",
+              "label": "Natural ordering",
+              "sortAscending": true
+            }
+          }
+        ],
+        "genericDimension1": [],
+        "facetDimension": [],
+        "animationDimension": [],
+        "genericMeasures": [
+          {
+            "column": "開花日までの日数",
+            "function": "AVG",
+            "type": "NUMERICAL",
+            "displayed": true,
+            "isA": "measure",
+            "displayAxis": "axis1",
+            "displayType": "column",
+            "computeMode": "NORMAL",
+            "computeModeDim": 0
+          }
+        ],
+        "xDimension": [],
+        "yDimension": [],
+        "uaXDimension": [],
+        "uaYDimension": [],
+        "uaSize": [],
+        "uaShape": [],
+        "uaColor": [],
+        "uaTooltip": [],
+        "groupDimension": [],
+        "xMeasure": [],
+        "yMeasure": [],
+        "colorMeasure": [],
+        "sizeMeasure": [],
+        "geometry": [],
+        "tooltipMeasures": [],
+        "boxplotBreakdownDim": [],
+        "boxplotValue": [],
+        "filters": [],
+        "axis1LogScale": false,
+        "axis2LogScale": false,
+        "includeZero": true,
+        "smoothing": true,
+        "showLegend": true,
+        "showXAxis": false,
+        "showInChartValues": false,
+        "showInChartLabels": true,
+        "strokeWidth": 1,
+        "fillOpacity": 0.6,
+        "showXAxisLabel": true,
+        "showYAxisLabel": true,
+        "hexbinRadius": 20,
+        "hexbinNumber": 20,
+        "hexbinRadiusMode": "NUM_HEXAGONS",
+        "chartHeight": 200,
+        "singleXAxis": true,
+        "multiTooltips": false,
+        "animationFrameDuration": 3000,
+        "animationRepeat": true,
+        "colorOptions": {
+          "singleColor": "#2678B1",
+          "transparency": 0.75,
+          "colorPalette": "default",
+          "ccScaleMode": "NORMAL",
+          "customPalette": {
+            "id": "__dku_custom__",
+            "name": "Custom Palette",
+            "colors": [],
+            "values": [],
+            "fixedValues": false
+          },
+          "paletteType": "CONTINUOUS",
+          "quantizationMode": "NONE",
+          "numQuantizeSteps": 5,
+          "paletteMiddleValue": 0.0
+        },
+        "bubblesOptions": {
+          "defaultRadius": 5.0,
+          "singleShape": "FILLED_CIRCLE"
+        },
+        "xAxisMode": "NORMAL",
+        "yAxisMode": "NORMAL",
+        "pieOptions": {
+          "donutHoleSize": 54.0
+        },
+        "scatterOptions": {
+          "equalScales": false,
+          "identityLine": false
+        },
+        "mapOptions": {
+          "tilesLayer": "cartodb-positron",
+          "lockSquareGrid": false
+        },
+        "mapGridOptions": {
+          "gridLonDeg": 0.5,
+          "gridLatDeg": 0.5
+        },
+        "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAAEZklEQVRoQ+2YXUxcRRTHd434YPxIrDWmZWcuH4m1xkSDmPhigwVb7szChhjU+tCERjBGm1rambsgAiLsnWmpTTVGakrSB6sSQ4CdubRCJfXFRGw0Mdaa8HFnljbGWhM/4oMaMdjOFlFkVwrt0r1vu/fcM//f+Z97M2eCgWvsCq4kXkgkVxyR/2K62oFn9E0X7DwWGt+3KWFAoOM9olz7Q4uIHT7H+wER/ZrjSkDjT2sWfisZR8WIYrgEUnlcMbRx5v9lBc6jsnqSoZ7A9HQwEAxOr6mP3362M/xdfv1g8URn+agRau2Wd/p70DcW9YjPbA6pGFYMl+Y7A8UTbsUopGKfYngnILJFc9SyNtq76kys6nw+HQITrExfyjOwwd9TccLELRq4YFfvHeN7q761nEHLd8v9ua1kUbHJZ/iYAQtR2ZZgqAlS8YZi+FlA5ZuaoWcAFUc1w5shFYcUw9sgFe8ohp8ERG7XHB0INI9cH2gt+R1S+bpi6LlUX8O10eFVZ2Kl5y3iRXxu980LbBHh+hw7gIitmuPDkIpdiuG9yVZpECWqA48Y4UYgJEIqjhGkol0x3Agd8bJy8UuAyj7NUCTQPH1doDX4R4jKhxMMfQQcUaRdfNLkzaXy3imGvrAa5H1+B/p8LphxciFgSOUWxdCRfNpz6wSr/sGqj6/zO8On5wUGxHtMc/t9QATVHDNAxA7N8X7TWpDIbsVRTV69hJOdSBkByQUuOruQsKW6H3K8RxOu/UHKwPMKudhahc3eLWOt9o9LJXixeUPOQHHCrRhd0xK/8WxL+JfZ+Zb1o7VYkFSfN8BFtV05Jw/W/bbygV/0ChKv2OP/VqAV6XDuCz23Tb1a/X0WeLk3Hqm+g0sZtyJbOpP30pfd7KzDl72kV1nCFeew2f/PrXNeo4ST7UhlLHCu01845VaOQaf/fuVWfjZrkPlr0IFEbFMcH4JUCsUQBlT0aYYjyw5sRb0Nfsw+YRxY39xzw6nW6l/n63zgiFLt4mFIRa9iuKow6q0ei9nnIBFHFMdbkqNlNP6QioU/NnnM4GNm7YLGvtB4eySxaODVzSM3nWst+bmo9tOckwcf+Nu+dWZxQI/eo9nmL5OjJZXdiqEaIwhScUAxvB1S6SmGbEhEk+K4DTiyQ7uoATriNeXi582hACDyXc3RE4HarpzAnH1yKp+LeYEh8Z5S3H47l8QfnOLhT6zdF04PLo2CA2CCVWhARJfmuA5SMaQYLrOoPOwztBU6oka5uNsM9YCKIc1wmZm0zMxqhvO7SP/NX/PKn8xvK+pF/NiFoX32BaJ963UscioVuJS2lqZ1IJVtiqEmi4gun+M6QMV7muHHk/dNS5HBjZqXHzfJrWh8nR8Ln4ZE1CuOO1Nt3f8LkO5z/3B4oVMF01qQiLsVx1+lu+CVjl/0O3ylAdJdPwucbsUyLT7rcKY5lq7erMPpVizT4rMOZ5pj6erNOpxuxTItPutwpjmWrt6sw+lWLNPirzmH/wTM+yhHfpjbewAAAABJRU5ErkJggg\u003d\u003d",
+        "disableSafetyLimits": false,
+        "useLiveProcessingIfAvailable": true,
+        "legendPlacement": "SIDEBAR"
+      },
+      "maxDataBytes": 157286400
+    }
+  ]
+}

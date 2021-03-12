@@ -1,0 +1,134 @@
+{
+  "inputDatasetSmartName": "days_till_bloom_cos_sin",
+  "script": {
+    "steps": [
+      {
+        "type": "CreateColumnWithGREL",
+        "params": {
+          "column": "年間通算日_コサイン",
+          "expression": "cos(2 * 3.14  * 年間通算日 / 365)"
+        },
+        "metaType": "PROCESSOR",
+        "preview": false,
+        "disabled": true,
+        "alwaysShowComment": false
+      },
+      {
+        "type": "CreateColumnWithGREL",
+        "params": {
+          "column": "年間通算日_サイン",
+          "expression": "sin(2 * 3.14  * 年間通算日 / 365)"
+        },
+        "metaType": "PROCESSOR",
+        "preview": false,
+        "disabled": true,
+        "alwaysShowComment": false
+      }
+    ],
+    "maxProcessedMemTableBytes": -1,
+    "columnsSelection": {
+      "mode": "ALL"
+    },
+    "columnWidthsByName": {
+      "年月日": 100,
+      "年月日_parsed": 204,
+      "年間通算日": 100,
+      "年": 100,
+      "月": 100,
+      "日": 100,
+      "日照時間": 100,
+      "場所": 100,
+      "降水量合計": 100,
+      "平均気温": 100,
+      "最高気温": 100,
+      "最低気温": 100,
+      "状況": 100,
+      "開花日": 190,
+      "開花日_parsed": 204,
+      "年初からの日数": 100,
+      "開花年": 100,
+      "開花日までの日数": 100,
+      "開花日までの日数_コサイン": 162,
+      "開花日までの日数_サイン": 169,
+      "年初からの日数_暦年平均": 134,
+      "日照時間_直近１ヶ月平均": 141,
+      "降水量合計_直近１ヶ月平均": 155,
+      "平均気温_直近１ヶ月平均": 141,
+      "最高気温_直近１ヶ月平均": 141,
+      "最低気温_直近１ヶ月平均": 162,
+      "日照時間_直近３ヶ月平均": 141,
+      "降水量合計_直近３ヶ月平均": 148,
+      "平均気温_直近３ヶ月平均": 141,
+      "最高気温_直近３ヶ月平均": 141,
+      "最低気温_直近３ヶ月平均": 141,
+      "日照時間_直近半年平均": 141,
+      "降水量合計_直近半年平均": 141,
+      "平均気温_直近半年平均": 141,
+      "最高気温_直近半年平均": 141,
+      "最低気温_直近半年平均": 141,
+      "年間通算日_サイン": 169,
+      "年間通算日_コサイン": 162
+    },
+    "coloring": {
+      "scheme": "MEANING_AND_STATUS",
+      "individualColumns": [],
+      "valueColoringMode": "HASH"
+    },
+    "sorting": [],
+    "analysisColumnData": {},
+    "explorationSampling": {
+      "selection": {
+        "maxStoredBytes": 104857600,
+        "timeout": -1,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "vizSampling": {
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "exploreUIParams": {
+      "autoRefresh": true
+    },
+    "globalSearchQuery": "",
+    "explorationFilters": [],
+    "previewMode": "ALL_ROWS"
+  },
+  "charts": [],
+  "name": "Quick modeling of 開花日までの日数_サイン on days_till_bloom_cos_sin",
+  "versionTag": {
+    "versionNumber": 4,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614955262713
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614940767277
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

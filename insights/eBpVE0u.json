@@ -1,0 +1,173 @@
+{
+  "type": "chart",
+  "params": {
+    "datasetSmartName": "future_blooming_day",
+    "engineType": "LINO",
+    "refreshableSelection": {
+      "selection": {
+        "useMemTable": false,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "def": {
+      "type": "scatter",
+      "variant": "normal",
+      "name": "Change of predicted blooming day",
+      "userEditedName": true,
+      "genericDimension0": [],
+      "genericDimension1": [],
+      "facetDimension": [],
+      "animationDimension": [],
+      "genericMeasures": [],
+      "xDimension": [],
+      "yDimension": [],
+      "uaXDimension": [
+        {
+          "column": "date_parsed",
+          "type": "DATE",
+          "treatAsAlphanum": false,
+          "dateMode": "RANGE",
+          "sortBy": "NATURAL",
+          "sortAscending": false,
+          "isA": "ua"
+        }
+      ],
+      "uaYDimension": [
+        {
+          "column": "blooming_day",
+          "type": "DATE",
+          "treatAsAlphanum": false,
+          "dateMode": "RANGE",
+          "sortBy": "NATURAL",
+          "sortAscending": false,
+          "isA": "ua"
+        }
+      ],
+      "uaSize": [],
+      "uaShape": [],
+      "uaColor": [
+        {
+          "column": "place",
+          "type": "ALPHANUM",
+          "treatAsAlphanum": false,
+          "isA": "ua",
+          "adminLevel": 0
+        }
+      ],
+      "uaTooltip": [],
+      "groupDimension": [],
+      "xMeasure": [],
+      "yMeasure": [],
+      "colorMeasure": [],
+      "sizeMeasure": [],
+      "geometry": [],
+      "tooltipMeasures": [],
+      "boxplotBreakdownDim": [],
+      "boxplotValue": [],
+      "filters": [],
+      "axis1LogScale": false,
+      "axis2LogScale": false,
+      "includeZero": true,
+      "smoothing": true,
+      "showLegend": true,
+      "showXAxis": false,
+      "showInChartValues": false,
+      "showInChartLabels": true,
+      "strokeWidth": 1,
+      "fillOpacity": 0.6,
+      "showXAxisLabel": true,
+      "showYAxisLabel": true,
+      "hexbinRadius": 20,
+      "hexbinNumber": 20,
+      "hexbinRadiusMode": "NUM_HEXAGONS",
+      "chartHeight": 200,
+      "singleXAxis": true,
+      "multiTooltips": false,
+      "animationFrameDuration": 3000,
+      "animationRepeat": true,
+      "colorOptions": {
+        "singleColor": "#2678B1",
+        "transparency": 0.75,
+        "colorPalette": "default",
+        "ccScaleMode": "NORMAL",
+        "customPalette": {
+          "id": "__dku_custom__",
+          "name": "Custom Palette",
+          "colors": [],
+          "values": [],
+          "fixedValues": false
+        },
+        "paletteType": "CONTINUOUS",
+        "quantizationMode": "NONE",
+        "numQuantizeSteps": 5,
+        "paletteMiddleValue": 0.0
+      },
+      "bubblesOptions": {
+        "defaultRadius": 5.0,
+        "singleShape": "FILLED_CIRCLE"
+      },
+      "computeMode": "NORMAL",
+      "xAxisMode": "NORMAL",
+      "yAxisMode": "NORMAL",
+      "pieOptions": {
+        "donutHoleSize": 54.0
+      },
+      "scatterOptions": {
+        "equalScales": false,
+        "identityLine": false
+      },
+      "mapOptions": {
+        "tilesLayer": "cartodb-positron",
+        "lockSquareGrid": false
+      },
+      "mapGridOptions": {
+        "gridLonDeg": 0.6,
+        "gridLatDeg": 0.6
+      },
+      "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAADS0lEQVRoQ+2YS0wTURSG/zN98GyNCiLGWCRhoRIVcSEiCzSKkhqiSGNcmaCQsMBolOKzrY9odUF0wUJDXPkIhGhCBdTEuhDZCC5AE41GiooCinFANC30mMZgAKOU6ZQO0tnOnfP/3/nvvTNzCTPsohnGizDw/554UBLmE7p3ALQgPPvVQFoJeAsB4QjcnIPE/gF81r0GcAkYug5oroIxG8QJgLANUL0kW5/IJ/Q9IKh9BQCIAMcD5AHgBXANAprIIt74V0hsgZZscI+MCQrwVM4StugeAmCy9WeP1mWLzgkGQyAPWcUcturvkVXcNK2BW46lD6afbon2gfJxXQa6+5/QZXi+n0lui3R/OkQ2sbG2+eMRAdg4DNbtyEhcLTvwonJHMjGqQMIB17ncp4ayul4QCQz0ddqNKYYyxxcG9afExb4vWpuSVlbX2gzQivINy2bNjYl4bMpMzFp31vlwV/rirLjoCM8QszZSJbwCKN497PV88wzFRGlUGmaoozSq6+J3d4FaJbiJEBOpUQ0K9XvwZjju6MWhHXmu88b1SWZHBTN2M6Oo84KxRlZgg/nOg4q81Wk/PJz/ou/rwPIE/XkQtTFjiReerWrS1G/PmJ9d3d6uNaWm/l5XtU3dJfmZCZWHq9uXnjWlPjeYHU6X3Thmisq1TGQDvup826CP0nbmr0koHjG3cH/jnHcVm/vkMutPHbZELyDbYNffxgYMfOvxh5P7bj8ZJqJir1fIensh17f7KvYKGHg8mW93HL9jKok+IOCkcmdSx7nsDiUBTeRFMnDNo66sg3WtpS67sWDM+49BROCJhEN1XzLw3qrWLVcKVzX8OaX1N8km7gwV0ES6koFHCseXVMf2VpoGJhJSyv2AgGube07lZ8w7rhQYf3wEBOyPgNLGSAJOMjtyOuzGu0qD8cePJOBgfvr5YzqQMZKARwtWO3tiTdnzZsamFUinQ/VswAmHyrhU3TCw1M5Nl+cmnbDB7LjkshtLpwvgeJ9SgIN2GjEVTZw08FSYCqZGGDiY3VVCbdkSZov+PsBqJR/v+BouH7BVf4qsouJ/FWUD9nVP6Qd4siashPXpjwdZE/ZHMNRjwsChTiDY+uGEg93hUNefcQn/BMpxBTgDbSNYAAAAAElFTkSuQmCC",
+      "disableSafetyLimits": false,
+      "useLiveProcessingIfAvailable": true,
+      "legendPlacement": "OUTER_RIGHT"
+    },
+    "maxDataBytes": 157286400
+  },
+  "owner": "mmiyazaki",
+  "listed": false,
+  "name": "Change of predicted blooming day on future_blooming_day",
+  "dashboardCreationId": "rIMln0K",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614181686677
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614181686677
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

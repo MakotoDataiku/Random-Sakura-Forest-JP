@@ -1,0 +1,220 @@
+{
+  "columnsSelection": {
+    "mode": "ALL"
+  },
+  "explorationSampling": {
+    "_refreshTrigger": 3,
+    "selection": {
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "latestPartitionsN": 1,
+      "maxRecords": 10000,
+      "selectedPartitions": [
+        "NP"
+      ],
+      "ordering": {
+        "rules": [],
+        "enabled": false
+      },
+      "withinFirstN": -1,
+      "partitionSelectionMethod": "ALL",
+      "maxStoredBytes": 104857600,
+      "targetRatio": 0.02,
+      "maxReadUncompressedBytes": -1,
+      "samplingMethod": "RANDOM_FIXED_RATIO",
+      "timeout": -1
+    },
+    "autoRefreshSample": false
+  },
+  "explorationFilters": [
+    {
+      "validityFilter": {
+        "column": "place",
+        "type": "validity",
+        "params": {
+          "nok": true,
+          "type": "Text",
+          "ok": true,
+          "empty": true
+        }
+      },
+      "column": "place",
+      "active": true,
+      "alphanumFilter": {
+        "values": [],
+        "column": "place",
+        "type": "alphanum",
+        "params": {
+          "mode": "full_string",
+          "normalization": "exact"
+        }
+      },
+      "type": "columnFilter",
+      "$$hashKey": "object:29048",
+      "facet": {
+        "columnType": "ALPHANUM",
+        "selectedValues": {},
+        "column": "place",
+        "sort": "count",
+        "type": "facet",
+        "currentMode": "ALPHANUM"
+      },
+      "currentMode": "FACET"
+    },
+    {
+      "validityFilter": {
+        "column": "flower_status",
+        "type": "validity",
+        "params": {
+          "nok": true,
+          "type": "Text",
+          "ok": true,
+          "empty": true
+        }
+      },
+      "column": "flower_status",
+      "active": true,
+      "alphanumFilter": {
+        "values": [],
+        "column": "flower_status",
+        "type": "alphanum",
+        "params": {
+          "mode": "full_string",
+          "normalization": "exact"
+        }
+      },
+      "type": "columnFilter",
+      "$$hashKey": "object:29437",
+      "facet": {
+        "columnType": "ALPHANUM",
+        "selectedValues": {},
+        "column": "flower_status",
+        "sort": "count",
+        "type": "facet",
+        "currentMode": "ALPHANUM"
+      },
+      "currentMode": "FACET"
+    }
+  ],
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "CreateColumnWithGREL",
+      "params": {
+        "expression": "if(状況 \u003d\u003d \"開花\" || 状況_弘前\u003d\u003d\"開花\", \"開花\", \"未開花\")",
+        "column": "状況"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": true,
+      "type": "CreateColumnWithGREL",
+      "params": {
+        "expression": "if(flower_status\u003d\u003d\"bloom\", \"bloom\", \nif(flower_status_aomori\u003d\u003d\"bloom\", \"bloom\", \"not yet\"))",
+        "column": "flower_status"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnsSelector",
+      "params": {
+        "columns": [
+          "状況_弘前"
+        ],
+        "keep": false,
+        "appliesTo": "SINGLE_COLUMN"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "DateParser",
+      "params": {
+        "outCol": "年月日_parsed",
+        "formats": [
+          "yyyy/MM/dd"
+        ],
+        "columns": [
+          "年月日"
+        ],
+        "timezone_id": "UTC",
+        "appliesTo": "SINGLE_COLUMN",
+        "lang": "auto"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "DateComponentsExtractor",
+      "params": {
+        "outMonthColumn": "月",
+        "outYearColumn": "年",
+        "column": "年月日_parsed",
+        "timezone_id": "UTC",
+        "outDayColumn": "日"
+      },
+      "alwaysShowComment": false
+    }
+  ],
+  "maxProcessedMemTableBytes": -1,
+  "previewMode": "ALL_ROWS",
+  "vizSampling": {
+    "_refreshTrigger": 0,
+    "autoRefreshSample": false
+  },
+  "analysisColumnData": {},
+  "columnWidthsByName": {
+    "date": 100,
+    "date_parsed_day": 128,
+    "precip_total": 105,
+    "year": 100,
+    "状況": 100,
+    "temp_high": 100,
+    "場所": 100,
+    "降水量合計": 100,
+    "月": 100,
+    "最低気温": 100,
+    "状況_弘前": 100,
+    "temp_ave": 100,
+    "date_parsed_month": 143,
+    "place": 100,
+    "flower_status_new": 143,
+    "temp_low": 100,
+    "date_parsed": 183,
+    "flower_status": 447,
+    "平均気温": 100,
+    "日": 100,
+    "年月日_parsed": 183,
+    "最高気温": 100,
+    "flower_status_aomori": 165,
+    "date_parsed_year": 135,
+    "年": 100,
+    "daylight": 100,
+    "日照時間": 100,
+    "年月日": 100
+  },
+  "sorting": [],
+  "globalSearchQuery": "",
+  "coloring": {
+    "scheme": "MEANING_AND_STATUS",
+    "individualColumns": [],
+    "valueColoringMode": "HASH"
+  }
+}

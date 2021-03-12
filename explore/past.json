@@ -1,0 +1,85 @@
+{
+  "script": {
+    "steps": [],
+    "maxProcessedMemTableBytes": -1,
+    "columnsSelection": {
+      "mode": "ALL"
+    },
+    "columnWidthsByName": {
+      "年月日": 100,
+      "年月日_parsed": 232,
+      "年": 100,
+      "日照時間": 100,
+      "場所": 100,
+      "降水量合計": 100,
+      "平均気温": 100,
+      "最高気温": 100,
+      "最低気温": 100,
+      "状況": 100,
+      "開花日": 190,
+      "開花日_parsed": 232,
+      "年初からの日数": 100,
+      "開花年": 100,
+      "開花日までの日数": 162,
+      "年初からの日数_暦年平均": 134,
+      "平均気温推移": 879,
+      "最高気温推移": 300,
+      "最低気温推移": 300,
+      "降水量合計推移": 300,
+      "日照時間推移": 300,
+      "降水量合計_直近１ヶ月平均": 155,
+      "平均気温_直近１ヶ月平均": 141,
+      "最高気温_直近１ヶ月平均": 141,
+      "最低気温_直近１ヶ月平均": 162,
+      "降水量合計_直近３ヶ月平均": 148,
+      "平均気温_直近３ヶ月平均": 141,
+      "最高気温_直近３ヶ月平均": 141,
+      "最低気温_直近３ヶ月平均": 141,
+      "降水量合計_直近半年平均": 141,
+      "平均気温_直近半年平均": 141,
+      "最高気温_直近半年平均": 141,
+      "最低気温_直近半年平均": 141
+    },
+    "coloring": {
+      "scheme": "MEANING_AND_STATUS",
+      "individualColumns": [],
+      "valueColoringMode": "HASH"
+    },
+    "sorting": [],
+    "analysisColumnData": {},
+    "explorationSampling": {
+      "selection": {
+        "maxStoredBytes": 104857600,
+        "timeout": -1,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "RANDOM_FIXED_RATIO",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 1
+    },
+    "vizSampling": {
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "exploreUIParams": {
+      "autoRefresh": true
+    },
+    "globalSearchQuery": "",
+    "explorationFilters": [],
+    "previewMode": "ALL_ROWS"
+  },
+  "charts": []
+}

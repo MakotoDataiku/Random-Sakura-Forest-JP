@@ -1,0 +1,183 @@
+{
+  "type": "chart",
+  "params": {
+    "datasetSmartName": "future_exp_joined_prepared",
+    "engineType": "LINO",
+    "refreshableSelection": {
+      "selection": {
+        "useMemTable": false,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "def": {
+      "type": "scatter",
+      "variant": "normal",
+      "name": "予想開花日の推移",
+      "userEditedName": true,
+      "genericDimension0": [],
+      "genericDimension1": [],
+      "facetDimension": [],
+      "animationDimension": [],
+      "genericMeasures": [],
+      "xDimension": [],
+      "yDimension": [],
+      "uaXDimension": [
+        {
+          "column": "年月日_parsed",
+          "type": "DATE",
+          "treatAsAlphanum": false,
+          "dateMode": "RANGE",
+          "sortBy": "NATURAL",
+          "sortAscending": false,
+          "isA": "ua"
+        }
+      ],
+      "uaYDimension": [
+        {
+          "column": "開花日",
+          "type": "DATE",
+          "treatAsAlphanum": false,
+          "dateMode": "RANGE",
+          "sortBy": "NATURAL",
+          "sortAscending": false,
+          "isA": "ua"
+        }
+      ],
+      "uaSize": [],
+      "uaShape": [],
+      "uaColor": [
+        {
+          "column": "場所",
+          "type": "ALPHANUM",
+          "treatAsAlphanum": false,
+          "isA": "ua",
+          "adminLevel": 0
+        }
+      ],
+      "uaTooltip": [],
+      "groupDimension": [],
+      "xMeasure": [],
+      "yMeasure": [],
+      "colorMeasure": [],
+      "sizeMeasure": [],
+      "geometry": [],
+      "tooltipMeasures": [],
+      "boxplotBreakdownDim": [],
+      "boxplotValue": [],
+      "filters": [
+        {
+          "filterType": "DATE_FACET",
+          "column": "年月日_parsed",
+          "columnType": "DATE",
+          "dateFilterType": "RANGE",
+          "minValue": 1.58943759158E12,
+          "isA": "filter",
+          "excludedValues": {},
+          "explicitExclude": false
+        }
+      ],
+      "axis1LogScale": false,
+      "axis2LogScale": false,
+      "includeZero": true,
+      "smoothing": true,
+      "showLegend": true,
+      "showXAxis": false,
+      "showInChartValues": false,
+      "showInChartLabels": true,
+      "strokeWidth": 1,
+      "fillOpacity": 0.6,
+      "showXAxisLabel": true,
+      "showYAxisLabel": true,
+      "hexbinRadius": 20,
+      "hexbinNumber": 20,
+      "hexbinRadiusMode": "NUM_HEXAGONS",
+      "chartHeight": 200,
+      "singleXAxis": true,
+      "multiTooltips": false,
+      "animationFrameDuration": 3000,
+      "animationRepeat": true,
+      "colorOptions": {
+        "singleColor": "#2678B1",
+        "transparency": 0.75,
+        "colorPalette": "default",
+        "ccScaleMode": "NORMAL",
+        "customPalette": {
+          "id": "__dku_custom__",
+          "name": "Custom Palette",
+          "colors": [],
+          "values": [],
+          "fixedValues": false
+        },
+        "paletteType": "CONTINUOUS",
+        "quantizationMode": "NONE",
+        "numQuantizeSteps": 5,
+        "paletteMiddleValue": 0.0
+      },
+      "bubblesOptions": {
+        "defaultRadius": 5.0,
+        "singleShape": "FILLED_CIRCLE"
+      },
+      "xAxisMode": "NORMAL",
+      "yAxisMode": "NORMAL",
+      "pieOptions": {
+        "donutHoleSize": 54.0
+      },
+      "scatterOptions": {
+        "equalScales": false,
+        "identityLine": false
+      },
+      "mapOptions": {
+        "tilesLayer": "cartodb-positron",
+        "lockSquareGrid": false
+      },
+      "mapGridOptions": {
+        "gridLonDeg": 0.5,
+        "gridLatDeg": 0.5
+      },
+      "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAAEDElEQVRoQ+2Zb0wbZRzHf8+1pYVBgWTSY2NtSUwmCWKYCfaKLuNFWXTAtutcUGOMb42+8F/jnHAeRBeqW4wuxhdb1LlkC7M3B8MlQy2J0qtZgtGh02QEWt24NjPtRlnazfYxh6lB2tFeaa+Nu3t3fX7P7/v9/L5P++IpgrvsQXcZLyjA//fESz5hzhO4gsq0W/Gt2w0A8VO0laxbHgrHC7MAMEdTZEc2YZUk8LB7unJvR3NEBHC7sTqkDT5JWw3HxHfX5NWnkYrQJDCO76HqPxU/G/YGbBpt2YXdrbXhTNCyA3N8IExThpqkMc4TmAHAswDoQQC4RVsNhiUwXhgHQOV2yvBwJojk+mk+ENlNGSrFd84TCNFWQ+3KvbIDZ2s+1zqXd/45u6X+wzvtlwzM8cFnaKpu6ShJfVy8cNJOkb3i9IGAKcCYyPa7J1Urb8Cn+flHEyrNNXvb+guZTIx6rt7Xbd3w69IR46810dT6S8k9X/BC9y6KHM3UY7X14W+vGPc+stEvpYfkhF28cB4BaJLJuDzzU3Zr/ZaP3bO6Zzsao8vFhzFWqb3BswBYJ9ZzfOAQTRlekmJwtVpuUmim28lpKf0kA6drznmCj9PWulP//FgIXbSVPMtNCr10O3nS5Q3usVvqPpdiqpC1OQNz3kA/bTEMLDfH8cIiTZHrCml4rb1zBl6rcLH2K8DFmrxcukrCck26WDpKwsWavFy6SsJyTbpYOkrCxZq8XLpKwnJNulg6eUkYM3rx5rAWsTf+vauSA+invgdCLYM/ptxbraadJ2AoM0VH2vxDPd9lAt308pmtRyveN3YOfn08U202642vjXTGbyf+8B/c9Us29WsCxvv1FlATOnP0OOMb6urAjH4GAO7ZFPtsy1H1exPbVf1mU3RxXFwTzUy90TrXqpoRT0L1SnOY0V8HgHOIvdG7fA0z+sOm6Ik2BHgRY3gIIfhe7LcyXZNj7M+58ieICNZVVw0EiTvBrw2YqdyG2MhEsjl+saHcrPnI4nN2uY2OMRtGEKvAf/3wm3Pnwif76PYN6nBT5+A3R9KZMb86RsYh3vL7Oz3n/wPcX20zRo/97Nc9tRkNRNyNjjObEwnNxiPrDl22sV+lvc9qcnC2bvUkON8+OL5SKydgzOhDgHHMHDtxSbxP9g3t0KeDwEzVBGIXtmGmyo3YhZR/Bi72tYS6Ygeu+5w7zMn90333h5sHL9Y8v2//zcMH3qrI5pimnpb0emKdZOCG18+1aMsIYebN7cF7X/hSe/mDx2KZTGEGCMRCItUY1CAWwsAwBLBsyrrplZFG37s94g9i3h7JwEllo2P0pt/ZnVMCeXOfQ6OcgXPQKoktCnBJxFBAE0rCBRxuSbRWEi6JGApo4m9/olY4MyCPRwAAAABJRU5ErkJggg\u003d\u003d",
+      "disableSafetyLimits": false,
+      "useLiveProcessingIfAvailable": true,
+      "legendPlacement": "OUTER_RIGHT"
+    },
+    "maxDataBytes": 157286400
+  },
+  "owner": "mmiyazaki",
+  "listed": false,
+  "name": "予想開花日の推移 on future_exp_joined_prepared",
+  "dashboardCreationId": "rIMln0K",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614945163946
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614945163946
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

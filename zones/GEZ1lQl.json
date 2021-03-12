@@ -1,0 +1,60 @@
+{
+  "name": "モデル評価",
+  "color": "#31439C",
+  "items": [
+    {
+      "objectId": "evaluated_sine",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "evaluated_cosine",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "evaluate_on_days_till_bloom_cos_sin_1",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "metrics_sine",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "evaluate_on_days_till_bloom_cos_sin",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "metrics_cosine",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "evaluated_joiend_prep",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_future_exp_joined_prepared_1",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "evaluated_joined",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_future_exp_joined_1",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "var_importance_sine",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "var_importance_cos",
+      "objectType": "DATASET"
+    }
+  ],
+  "shared": [],
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

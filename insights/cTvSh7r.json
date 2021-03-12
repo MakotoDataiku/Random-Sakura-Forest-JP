@@ -1,0 +1,173 @@
+{
+  "type": "chart",
+  "params": {
+    "datasetSmartName": "random_sakura_forest_prepared",
+    "engineType": "LINO",
+    "refreshableSelection": {
+      "selection": {
+        "useMemTable": false,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "FULL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 1
+    },
+    "def": {
+      "type": "scatter",
+      "variant": "normal",
+      "name": "開花予想日の推移",
+      "userEditedName": true,
+      "genericDimension0": [],
+      "genericDimension1": [],
+      "facetDimension": [],
+      "animationDimension": [],
+      "genericMeasures": [],
+      "xDimension": [],
+      "yDimension": [],
+      "uaXDimension": [
+        {
+          "column": "年月日_parsed",
+          "type": "DATE",
+          "treatAsAlphanum": false,
+          "dateMode": "RANGE",
+          "sortBy": "NATURAL",
+          "sortAscending": false,
+          "isA": "ua"
+        }
+      ],
+      "uaYDimension": [
+        {
+          "column": "開花日",
+          "type": "DATE",
+          "treatAsAlphanum": false,
+          "dateMode": "RANGE",
+          "sortBy": "NATURAL",
+          "sortAscending": false,
+          "isA": "ua"
+        }
+      ],
+      "uaSize": [],
+      "uaShape": [],
+      "uaColor": [
+        {
+          "column": "場所",
+          "type": "ALPHANUM",
+          "treatAsAlphanum": false,
+          "isA": "ua",
+          "adminLevel": 0
+        }
+      ],
+      "uaTooltip": [],
+      "groupDimension": [],
+      "xMeasure": [],
+      "yMeasure": [],
+      "colorMeasure": [],
+      "sizeMeasure": [],
+      "geometry": [],
+      "tooltipMeasures": [],
+      "boxplotBreakdownDim": [],
+      "boxplotValue": [],
+      "filters": [],
+      "axis1LogScale": false,
+      "axis2LogScale": false,
+      "includeZero": true,
+      "smoothing": true,
+      "showLegend": true,
+      "showXAxis": false,
+      "showInChartValues": false,
+      "showInChartLabels": true,
+      "strokeWidth": 1,
+      "fillOpacity": 0.6,
+      "showXAxisLabel": true,
+      "showYAxisLabel": true,
+      "hexbinRadius": 20,
+      "hexbinNumber": 20,
+      "hexbinRadiusMode": "NUM_HEXAGONS",
+      "chartHeight": 200,
+      "singleXAxis": true,
+      "multiTooltips": false,
+      "animationFrameDuration": 3000,
+      "animationRepeat": true,
+      "colorOptions": {
+        "singleColor": "#2678B1",
+        "transparency": 0.6,
+        "colorPalette": "Set1",
+        "ccScaleMode": "NORMAL",
+        "customPalette": {
+          "id": "__dku_custom__",
+          "name": "Custom Palette",
+          "colors": [],
+          "values": [],
+          "fixedValues": false
+        },
+        "paletteType": "CONTINUOUS",
+        "quantizationMode": "NONE",
+        "numQuantizeSteps": 5,
+        "paletteMiddleValue": 0.0
+      },
+      "bubblesOptions": {
+        "defaultRadius": 5.0,
+        "singleShape": "EMPTY_CIRCLE"
+      },
+      "computeMode": "NORMAL",
+      "xAxisMode": "NORMAL",
+      "yAxisMode": "NORMAL",
+      "pieOptions": {
+        "donutHoleSize": 54.0
+      },
+      "scatterOptions": {
+        "equalScales": false,
+        "identityLine": false
+      },
+      "mapOptions": {
+        "tilesLayer": "cartodb-positron",
+        "lockSquareGrid": false
+      },
+      "mapGridOptions": {
+        "gridLonDeg": 0.5,
+        "gridLatDeg": 0.5
+      },
+      "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAADDUlEQVRoQ+2Tb0gTcRjHn985nQ4ZZq1ytylBSQazAv8sDMoXkjd35upVoFD4pgjJIghKd90ySgh6kUEv6p1UBLWx2U7phUEY0wzthQj9eaG7U5naH435b94v9sIIiWDn3W3k3cuD5/t8Ps/3DsEme9Am8wVN+H9vXNaGy5mgsZ91zNmZnhsh9ljr+uMdYHpzhtnK77/fY4zsTM97DDCDABsAwLBCjpfrhIIhQDAHGIsYETEEsIowLgh5qnfbme52jKEhnjH7TdyVm0sMGkB/8DV7dLW8tfsBQoQTI5HIWMbFb245ptczyCZc5uYaEWBbv8fRvH5JmZs7NeChnqy9L3Nznwmkuxpiq54p9UXxJLnVIgizsgtjAHSp3hO42+l2SoWnfTVtCIui38W5pWb8OTeWl39Yh/AZciLcKLswbyafnr99xLX/y9iUh+0rqH1OVfhPcn20z3ERAE4jQGlYFLMIjKZ2RJZKsqKrOGLKGNj2deUQKSx8anjMr4gIHFaeF3izZYi5vrdwdkv6QEfzCAYQTQhQz9n7top9I/PF+iW8LFj1sWimLmJYiOmyomJO1EAYY+kEGH/ExMVMhOaz09MWM4keUYf2BOqCRbIJ0z7HBwSA/HXB4rXQsNnyEAEcf1VhtFW9nR/ULy2UmmZmJqW2Rr9wfAycCBZKnf/bnKR/mPZSTQEXdy8eSHup3oCLq5QTSsksScJxIJ60tpzrsI1FhptK+lnqgpKQcmZLFhZI6x1SCF8GhiGAZUU5oZTMkiw8kZdXZJ6cHLW3dBWF2pyjSkLKmZ2wMBWkLJyD4+WEUDMrYWE14ZTYlbCw00u1d7m4K0rAqJGZsHAcKmIyZW+fnv6pBqDcOyQJj++0luZPhd/JDaNGniRhNcCU2qEJK3XZVMnVGk6VJpTi0BpW6rKpkqs1nCpNKMWhNfyvy9I+6lqgjrup1PXVyNUaVuPKydyRUMO0t7ox4Op+lEzgje5OSLjWW1Pvd73s3OjSZM4nJJxMULl2a8JyXTJVc7SGU7UZubi0huW6ZKrm/AInh/Epx+g8oAAAAABJRU5ErkJggg\u003d\u003d",
+      "disableSafetyLimits": false,
+      "useLiveProcessingIfAvailable": true,
+      "legendPlacement": "INNER_TOP_RIGHT"
+    },
+    "maxDataBytes": 157286400
+  },
+  "owner": "mmiyazaki",
+  "listed": false,
+  "name": "開花予想日の推移 on random_sakura_forest_prepared",
+  "dashboardCreationId": "rIMln0K",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614871261147
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614871261147
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

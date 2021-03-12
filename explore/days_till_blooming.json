@@ -1,0 +1,205 @@
+{
+  "script": {
+    "steps": [],
+    "maxProcessedMemTableBytes": -1,
+    "columnsSelection": {
+      "mode": "SELECT",
+      "list": [
+        {
+          "name": "年月日",
+          "d": false
+        },
+        {
+          "name": "年月日_parsed",
+          "d": true
+        },
+        {
+          "name": "年",
+          "d": true
+        },
+        {
+          "name": "月",
+          "d": true
+        },
+        {
+          "name": "日",
+          "d": true
+        },
+        {
+          "name": "日照時間",
+          "d": false
+        },
+        {
+          "name": "場所",
+          "d": true
+        },
+        {
+          "name": "降水量合計",
+          "d": false
+        },
+        {
+          "name": "平均気温",
+          "d": false
+        },
+        {
+          "name": "最高気温",
+          "d": false
+        },
+        {
+          "name": "最低気温",
+          "d": false
+        },
+        {
+          "name": "状況",
+          "d": false
+        },
+        {
+          "name": "開花日",
+          "d": false
+        },
+        {
+          "name": "開花日_parsed",
+          "d": true
+        },
+        {
+          "name": "年初からの日数",
+          "d": false
+        },
+        {
+          "name": "開花年",
+          "d": false
+        },
+        {
+          "name": "開花日までの日数",
+          "d": true
+        }
+      ]
+    },
+    "columnWidthsByName": {
+      "date": 100,
+      "date_parsed": 232,
+      "year": 100,
+      "daylight": 100,
+      "place": 100,
+      "precip_total": 105,
+      "temp_ave": 100,
+      "temp_high": 100,
+      "temp_low": 100,
+      "flower_status": 113,
+      "blooming_day": 190,
+      "blooming_day_parsed": 183,
+      "days_till_bloom": 128,
+      "年月日": 100,
+      "年月日_parsed": 232,
+      "年": 100,
+      "月": 100,
+      "日": 100,
+      "日照時間": 100,
+      "場所": 100,
+      "降水量合計": 100,
+      "平均気温": 100,
+      "最高気温": 100,
+      "最低気温": 100,
+      "状況": 100,
+      "開花日": 190,
+      "開花日_parsed": 183,
+      "年初からの日数": 100,
+      "開花年": 100,
+      "開花日までの日数": 211
+    },
+    "coloring": {
+      "scheme": "MEANING_AND_STATUS",
+      "individualColumns": [],
+      "valueColoringMode": "HASH"
+    },
+    "sorting": [
+      {
+        "column": "年月日_parsed",
+        "ascending": true
+      }
+    ],
+    "analysisColumnData": {},
+    "explorationSampling": {
+      "selection": {
+        "maxStoredBytes": 104857600,
+        "timeout": -1,
+        "filter": {
+          "distinct": false,
+          "enabled": true,
+          "uiData": {
+            "mode": "\u0026\u0026",
+            "conditions": [
+              {
+                "input": "場所",
+                "operator": "contains",
+                "col": "年月日_parsed",
+                "string": "東京",
+                "num": 2021.0
+              }
+            ]
+          }
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "RANDOM_FIXED_RATIO",
+        "maxRecords": 10000,
+        "targetRatio": 1.0,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 5
+    },
+    "vizSampling": {
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "exploreUIParams": {
+      "autoRefresh": true
+    },
+    "globalSearchQuery": "",
+    "explorationFilters": [
+      {
+        "column": "場所",
+        "type": "columnFilter",
+        "currentMode": "FACET",
+        "active": true,
+        "facet": {
+          "type": "facet",
+          "column": "場所",
+          "columnType": "ALPHANUM",
+          "currentMode": "ALPHANUM",
+          "sort": "count",
+          "selectedValues": {
+            "東京": true
+          }
+        },
+        "alphanumFilter": {
+          "type": "alphanum",
+          "column": "場所",
+          "values": [],
+          "params": {
+            "mode": "full_string",
+            "normalization": "exact"
+          }
+        },
+        "validityFilter": {
+          "type": "validity",
+          "column": "場所",
+          "params": {
+            "type": "Text",
+            "ok": true,
+            "nok": true,
+            "empty": true
+          }
+        }
+      }
+    ],
+    "previewMode": "ALL_ROWS"
+  },
+  "charts": []
+}

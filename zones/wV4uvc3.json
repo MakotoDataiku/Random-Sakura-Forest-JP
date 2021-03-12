@@ -1,0 +1,80 @@
+{
+  "name": "機械学習",
+  "color": "#C82423",
+  "items": [
+    {
+      "objectId": "split_vectorized_past_2",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "days_till_bloom_cos_sin",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_days_till_bloom_cos_sin",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "train_Random_Sakura_Forest__Cosine_",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "O6X7tHP6",
+      "objectType": "SAVED_MODEL"
+    },
+    {
+      "objectId": "score_future_exp",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "train_Random_Sakura_Forest__Sine_",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "Zs6dqlBs",
+      "objectType": "SAVED_MODEL"
+    },
+    {
+      "objectId": "score_future_exp_1",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "compute_future_exp_joined",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "compute_future_exp_joined_prepared",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "this_year",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "historical",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "this_year_cosine",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "this_year_sine",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "this_year_joined",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "this_year_joined_prepared",
+      "objectType": "DATASET"
+    }
+  ],
+  "shared": [],
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

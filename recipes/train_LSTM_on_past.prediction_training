@@ -1,0 +1,1070 @@
+{
+  "operationMode": "TRAIN_SPLITTED_ONLY",
+  "splitParams": {
+    "ttPolicy": "SPLIT_SINGLE_DATASET",
+    "ssdSplitMode": "RANDOM",
+    "splitBeforePrepare": true,
+    "ssdSelection": {
+      "useMemTable": false,
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "partitionSelectionMethod": "ALL",
+      "latestPartitionsN": 1,
+      "ordering": {
+        "enabled": false,
+        "rules": []
+      },
+      "samplingMethod": "FULL",
+      "maxRecords": 100000,
+      "targetRatio": 0.02,
+      "withinFirstN": -1,
+      "maxReadUncompressedBytes": -1
+    },
+    "ssdTrainingRatio": 0.8,
+    "ssdSeed": 1337,
+    "testOnLargerValues": true,
+    "kfold": false,
+    "nFolds": 5,
+    "instanceIdRefresher": 2,
+    "subSamplingSeed": 1337
+  },
+  "backendType": "KERAS",
+  "sparkParams": {
+    "sparkConf": {
+      "inheritConf": "default",
+      "conf": []
+    },
+    "sparkUseGlobalMetastore": false,
+    "sparkPreparedDFStorageLevel": "MEMORY_AND_DISK",
+    "sparkRepartitionNonHDFS": 1,
+    "pipelineAllowStart": true,
+    "pipelineAllowMerge": true,
+    "sparkExecutionEngine": "SPARK_SUBMIT"
+  },
+  "envName": "deep_doctor",
+  "envSelection": {
+    "envMode": "EXPLICIT_ENV",
+    "envName": "makoto-deep-doctor"
+  },
+  "script": {
+    "steps": [
+      {
+        "type": "ColumnRenamer",
+        "params": {
+          "renamings": [
+            {
+              "from": "平均気温推移",
+              "to": "past_ave_temp"
+            },
+            {
+              "from": "最高気温推移",
+              "to": "past_high_temp"
+            },
+            {
+              "from": "最低気温推移",
+              "to": "past_low_temp"
+            },
+            {
+              "from": "降水量合計推移",
+              "to": "past_precip"
+            }
+          ]
+        },
+        "metaType": "PROCESSOR",
+        "preview": false,
+        "disabled": false,
+        "alwaysShowComment": false
+      },
+      {
+        "type": "ColumnRenamer",
+        "params": {
+          "renamings": [
+            {
+              "from": "日照時間推移",
+              "to": "past_daylight"
+            }
+          ]
+        },
+        "metaType": "PROCESSOR",
+        "preview": false,
+        "disabled": false,
+        "alwaysShowComment": false
+      }
+    ],
+    "maxProcessedMemTableBytes": -1,
+    "contextProjectKey": "SAKURAJPN",
+    "columnsSelection": {
+      "mode": "ALL"
+    },
+    "columnWidthsByName": {
+      "日照時間推移": 300,
+      "開花年": 100,
+      "平均気温_直近１ヶ月平均": 141,
+      "開花日までの日数": 100,
+      "開花日": 190,
+      "日照時間": 100,
+      "最低気温": 100,
+      "平均気温_直近３ヶ月平均": 141,
+      "年月日": 100,
+      "降水量合計_直近１ヶ月平均": 155,
+      "降水量合計推移": 300,
+      "最低気温推移": 300,
+      "最高気温_直近１ヶ月平均": 141,
+      "最高気温": 100,
+      "開花日_parsed": 232,
+      "最高気温_直近３ヶ月平均": 141,
+      "平均気温_直近半年平均": 141,
+      "降水量合計_直近３ヶ月平均": 148,
+      "年初からの日数": 100,
+      "平均気温": 100,
+      "最低気温_直近半年平均": 141,
+      "最高気温推移": 300,
+      "年月日_parsed": 232,
+      "最低気温_直近１ヶ月平均": 162,
+      "場所": 100,
+      "状況": 100,
+      "平均気温推移": 300,
+      "降水量合計_直近半年平均": 141,
+      "年初からの日数_暦年平均": 134,
+      "降水量合計": 100,
+      "年": 100,
+      "最高気温_直近半年平均": 141,
+      "最低気温_直近３ヶ月平均": 141
+    },
+    "coloring": {
+      "scheme": "MEANING_AND_STATUS",
+      "individualColumns": [],
+      "valueColoringMode": "HASH"
+    },
+    "sorting": [],
+    "analysisColumnData": {},
+    "explorationSampling": {
+      "selection": {
+        "maxStoredBytes": 104857600,
+        "timeout": -1,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "vizSampling": {
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "exploreUIParams": {
+      "autoRefresh": true
+    },
+    "globalSearchQuery": "",
+    "explorationFilters": [],
+    "previewMode": "ALL_ROWS"
+  },
+  "expectedPreparationOutputSchema": {
+    "columns": [
+      {"name":"年月日","type":"string"},
+      {"name":"年月日_parsed","type":"date"},
+      {"name":"年","type":"bigint"},
+      {"name":"日照時間","type":"double"},
+      {"name":"場所","type":"string"},
+      {"name":"降水量合計","type":"double"},
+      {"name":"平均気温","type":"double"},
+      {"name":"最高気温","type":"double"},
+      {"name":"最低気温","type":"double"},
+      {"name":"状況","type":"string"},
+      {"name":"開花日","type":"string"},
+      {"name":"開花日_parsed","type":"date"},
+      {"name":"年初からの日数","type":"double"},
+      {"name":"開花年","type":"double"},
+      {"name":"開花日までの日数","type":"double"},
+      {"name":"年初からの日数_暦年平均","type":"double"},
+      {"name":"past_ave_temp","type":"string"},
+      {"name":"past_high_temp","type":"string"},
+      {"name":"past_low_temp","type":"string"},
+      {"name":"past_precip","type":"string"},
+      {"name":"past_daylight","type":"string"},
+      {"name":"降水量合計_直近１ヶ月平均","type":"double"},
+      {"name":"平均気温_直近１ヶ月平均","type":"double"},
+      {"name":"最高気温_直近１ヶ月平均","type":"double"},
+      {"name":"最低気温_直近１ヶ月平均","type":"double"},
+      {"name":"降水量合計_直近３ヶ月平均","type":"double"},
+      {"name":"平均気温_直近３ヶ月平均","type":"double"},
+      {"name":"最高気温_直近３ヶ月平均","type":"double"},
+      {"name":"最低気温_直近３ヶ月平均","type":"double"},
+      {"name":"降水量合計_直近半年平均","type":"double"},
+      {"name":"平均気温_直近半年平均","type":"double"},
+      {"name":"最高気温_直近半年平均","type":"double"},
+      {"name":"最低気温_直近半年平均","type":"double"}
+    ],
+    "userModified": false
+  },
+  "core": {
+    "target_variable": "開花日までの日数",
+    "prediction_type": "REGRESSION",
+    "weight": {
+      "weightMethod": "NO_WEIGHTING"
+    },
+    "calibration": {
+      "calibrationMethod": "NO_CALIBRATION"
+    },
+    "time": {
+      "enabled": false,
+      "ascending": true
+    },
+    "partitionedModel": {
+      "enabled": false,
+      "ssdSelection": {
+        "useMemTable": false,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "FULL",
+        "maxRecords": -1,
+        "targetRatio": 0.02,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      }
+    },
+    "backendType": "KERAS",
+    "taskType": "PREDICTION",
+    "executionParams": {
+      "envSelection": {
+        "envMode": "EXPLICIT_ENV",
+        "envName": "makoto-deep-doctor"
+      },
+      "envName": "makoto-deep-doctor",
+      "containerSelection": {
+        "containerMode": "INHERIT"
+      },
+      "sparkParams": {
+        "sparkConf": {
+          "inheritConf": "default",
+          "conf": []
+        },
+        "sparkUseGlobalMetastore": false,
+        "sparkPreparedDFStorageLevel": "MEMORY_AND_DISK",
+        "sparkRepartitionNonHDFS": 1,
+        "pipelineAllowStart": true,
+        "pipelineAllowMerge": true,
+        "sparkExecutionEngine": "SPARK_SUBMIT"
+      },
+      "sparkCheckpoint": "NONE"
+    }
+  },
+  "preprocessing": {
+    "target_remapping": [],
+    "skipPreprocessing": false,
+    "per_feature": {
+      "開花年": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "平均気温_直近１ヶ月平均": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "開花日までの日数": {
+        "generate_derivative": false,
+        "impute_constant_value": 0.0,
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "TARGET",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "開花日": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "MAX_NB_CATEGORIES",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "nb_bins_hashing": 1048576,
+        "hash_whole_categories": false,
+        "dummy_drop": "NONE",
+        "role": "REJECT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DateSource"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "past_low_temp": {
+        "vector_handling": "UNFOLD",
+        "missing_handling": "DROP_ROW",
+        "missing_impute_with": "MODE",
+        "role": "INPUT",
+        "type": "VECTOR",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "JSONArrayMeaning"
+        },
+        "autoReason": "REJECT_IDENTIFIER",
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "日照時間": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "最低気温": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "最高気温_直近１ヶ月平均": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "年月日": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "MAX_NB_CATEGORIES",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "nb_bins_hashing": 1048576,
+        "hash_whole_categories": false,
+        "dummy_drop": "NONE",
+        "role": "REJECT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DateSource"
+        },
+        "autoReason": "REJECT_IDENTIFIER",
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "降水量合計_直近１ヶ月平均": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "past_ave_temp": {
+        "vector_handling": "UNFOLD",
+        "missing_handling": "DROP_ROW",
+        "missing_impute_with": "MODE",
+        "role": "INPUT",
+        "type": "VECTOR",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "JSONArrayMeaning"
+        },
+        "autoReason": "REJECT_IDENTIFIER",
+        "customHandlingCode": "from windowprocessor.windowprocessor import windowProcessor\nimport dataiku\nwindow_size \u003d dataiku.get_custom_variables(typed\u003dTrue)[\"window_size\"]\nprocessor \u003d windowProcessor(window_size)",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "平均気温_直近３ヶ月平均": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "最高気温": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "開花日_parsed": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "Date"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "past_daylight": {
+        "vector_handling": "UNFOLD",
+        "missing_handling": "DROP_ROW",
+        "missing_impute_with": "MODE",
+        "role": "REJECT",
+        "type": "VECTOR",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "JSONArrayMeaning"
+        },
+        "autoReason": "REJECT_IDENTIFIER",
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "past_high_temp": {
+        "vector_handling": "UNFOLD",
+        "missing_handling": "DROP_ROW",
+        "missing_impute_with": "MODE",
+        "role": "INPUT",
+        "type": "VECTOR",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "JSONArrayMeaning"
+        },
+        "autoReason": "REJECT_IDENTIFIER",
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "最高気温_直近３ヶ月平均": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "平均気温_直近半年平均": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "降水量合計_直近３ヶ月平均": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "年初からの日数": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "平均気温": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "最低気温_直近半年平均": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "年月日_parsed": {
+        "generate_derivative": false,
+        "impute_constant_value": 0.0,
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "Date"
+        },
+        "autoReason": "REJECT_IDENTIFIER",
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "最低気温_直近１ヶ月平均": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "場所": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "MAX_NB_CATEGORIES",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "nb_bins_hashing": 1048576,
+        "hash_whole_categories": false,
+        "dummy_drop": "NONE",
+        "role": "REJECT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "Text"
+        },
+        "autoReason": "REJECT_ZERO_VARIANCE",
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "状況": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "MAX_NB_CATEGORIES",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "nb_bins_hashing": 1048576,
+        "hash_whole_categories": false,
+        "dummy_drop": "NONE",
+        "role": "REJECT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "Text"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "降水量合計_直近半年平均": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "年初からの日数_暦年平均": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "past_precip": {
+        "vector_handling": "UNFOLD",
+        "missing_handling": "DROP_ROW",
+        "missing_impute_with": "MODE",
+        "role": "REJECT",
+        "type": "VECTOR",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "JSONArrayMeaning"
+        },
+        "autoReason": "REJECT_IDENTIFIER",
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "降水量合計": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "年": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "LongMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "最高気温_直近半年平均": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      },
+      "最低気温_直近３ヶ月平均": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": true,
+          "autoModifiedByDSS": false,
+          "recordedMeaning": "DoubleMeaning"
+        },
+        "customHandlingCode": "",
+        "customProcessorWantsMatrix": false,
+        "sendToInput": "main"
+      }
+    },
+    "reduce": {
+      "enabled": false,
+      "kept_variance": 0.0
+    },
+    "feature_generation": {
+      "pairwise_linear": {
+        "behavior": "DISABLED"
+      },
+      "polynomial_combinations": {
+        "behavior": "DISABLED"
+      },
+      "manual_interactions": {
+        "interactions": []
+      },
+      "numericals_clustering": {
+        "k": 0,
+        "all_features": false,
+        "input_features": [],
+        "behavior": "DISABLED"
+      },
+      "categoricals_count_transformer": {
+        "all_features": false,
+        "input_features": [],
+        "behavior": "DISABLED"
+      }
+    },
+    "feature_selection_params": {
+      "method": "NONE",
+      "random_forest_params": {
+        "n_trees": 30,
+        "depth": 10,
+        "n_features": 25
+      },
+      "lasso_params": {
+        "alpha": [
+          0.01,
+          0.1,
+          1.0,
+          10.0,
+          100.0
+        ],
+        "cross_validate": true
+      },
+      "pca_params": {
+        "n_features": 25,
+        "variance_proportion": 0.9
+      },
+      "correlation_params": {
+        "min_abs_correlation": 0.0,
+        "max_abs_correlation": 1.0,
+        "n_features": 25
+      },
+      "custom_params": {
+        "code": "# type your code here"
+      }
+    },
+    "preprocessingFitSampleRatio": 1.0,
+    "preprocessingFitSampleSeed": 1337
+  },
+  "modeling": {
+    "algorithm": "KERAS_CODE",
+    "keras": {
+      "epochs": 10,
+      "batchSize": 32,
+      "trainOnAllData": true,
+      "stepsPerEpoch": 100,
+      "shuffleData": true,
+      "useGPU": false,
+      "gpuList": [
+        0
+      ],
+      "perGPUMemoryFraction": 0.5,
+      "gpuAllowGrowth": false,
+      "advancedFitMode": false,
+      "enabled": true,
+      "kerasInputs": [
+        "main"
+      ],
+      "buildCode": "from keras.layers import Input, Dense, LSTM, Reshape, Concatenate, concatenate\nfrom keras.models import Model\nimport tensorflow as tf\nimport dataiku\n\n# Define the keras architecture of your model in \u0027build_model\u0027 and return it. Compilation must be done in \u0027compile_model\u0027.\n#   input_shapes  - dictionary of shapes per input as defined in features handling\n#   n_classes - For classification, number of target classes\n\n\ndef build_model(input_shapes, n_classes\u003dNone):\n    print(\"input_shapes\", input_shapes)\n\n    # This input will receive all the preprocessed features\n    window_size \u003d dataiku.get_custom_variables(typed\u003dTrue)[\"window_size\"]\n\n    input_main \u003d Input(shape\u003dinput_shapes[\"main\"], name\u003d\"main\")\n    # input_past_ave_temp_preprocessed \u003d Input(shape\u003d(window_size,), name\u003d\"past_ave_temp_preprocessed\")\n\n    x \u003d Reshape((input_shapes[\"main\"][0], 1))(input_main)\n    x \u003d LSTM(window_size, return_sequences\u003dTrue)(x)\n    x \u003d LSTM(window_size, return_sequences\u003dFalse)(x)\n\n    predictions \u003d Dense(1)(x)\n\n    # The \u0027inputs\u0027 parameter of your model must contain the\n    # full list of inputs used in the architecture\n    model \u003d Model(inputs \u003d [input_main], outputs \u003d predictions)\n\n    return model\n\n# Compile your model and return it\n#   model   - model defined in \u0027build_model\u0027\ndef compile_model(model):\n    print(\u0027compiling model\u0027)\n    \n    # The loss function depends on the type of problem you solve.\n    # \u0027mse\u0027 is appropriate for a regression.\n    model.compile(optimizer\u003d\u0027rmsprop\u0027,\n                  loss\u003d\u0027mse\u0027)\n\n    return model"
+    },
+    "max_ensemble_nodes_serialized": 0,
+    "metrics": {
+      "evaluationMetric": "R2",
+      "customEvaluationMetricGIB": true,
+      "customEvaluationMetricNeedsProba": false,
+      "costMatrixWeights": {
+        "tpGain": 1.0,
+        "tnGain": 0.0,
+        "fpGain": -0.3,
+        "fnGain": 0.0
+      },
+      "liftPoint": 0.4
+    },
+    "autoOptimizeThreshold": true,
+    "forcedClassifierThreshold": 0.0,
+    "gridLength": 10,
+    "grid_search_params": {
+      "mode": "KFOLD",
+      "splitRatio": 0.8,
+      "shuffleIterations": 1,
+      "nFolds": 3,
+      "stratified": true,
+      "strategy": "GRID",
+      "bayesianOptimizer": "SCIKIT_OPTIMIZE",
+      "randomized": true,
+      "seed": 0,
+      "nIter": 0,
+      "nIterRandom": 10,
+      "timeout": 0,
+      "nJobs": 4,
+      "distributed": false,
+      "nContainers": 4
+    },
+    "pluginAlgoCustomGridSearch": false,
+    "computeLearningCurves": false,
+    "skipExpensiveReports": false
+  },
+  "partSource": "ACTIVE_VERSION",
+  "generatingModelId": "A-SAKURAJPN-B0kbIwfn-VZLZB3ik-s6-pp1-m1"
+}

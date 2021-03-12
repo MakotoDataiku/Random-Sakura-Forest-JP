@@ -1,0 +1,170 @@
+{
+  "type": "chart",
+  "params": {
+    "datasetSmartName": "days_till_bloom_cos_sin",
+    "engineType": "LINO",
+    "refreshableSelection": {
+      "selection": {
+        "useMemTable": false,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "def": {
+      "type": "scatter",
+      "variant": "normal",
+      "name": "開花日までの日数_コサイン vs 開花日までの日数_サイン",
+      "userEditedName": false,
+      "genericDimension0": [],
+      "genericDimension1": [],
+      "facetDimension": [],
+      "animationDimension": [],
+      "genericMeasures": [],
+      "xDimension": [],
+      "yDimension": [],
+      "uaXDimension": [
+        {
+          "column": "開花日までの日数_コサイン",
+          "type": "NUMERICAL",
+          "treatAsAlphanum": false,
+          "sortBy": "NATURAL",
+          "sortAscending": false,
+          "isA": "ua"
+        }
+      ],
+      "uaYDimension": [
+        {
+          "column": "開花日までの日数_サイン",
+          "type": "NUMERICAL",
+          "treatAsAlphanum": false,
+          "sortBy": "NATURAL",
+          "sortAscending": false,
+          "isA": "ua"
+        }
+      ],
+      "uaSize": [],
+      "uaShape": [],
+      "uaColor": [
+        {
+          "column": "状況",
+          "type": "ALPHANUM",
+          "treatAsAlphanum": false,
+          "isA": "ua",
+          "adminLevel": 0
+        }
+      ],
+      "uaTooltip": [],
+      "groupDimension": [],
+      "xMeasure": [],
+      "yMeasure": [],
+      "colorMeasure": [],
+      "sizeMeasure": [],
+      "geometry": [],
+      "tooltipMeasures": [],
+      "boxplotBreakdownDim": [],
+      "boxplotValue": [],
+      "filters": [],
+      "axis1LogScale": false,
+      "axis2LogScale": false,
+      "includeZero": true,
+      "smoothing": true,
+      "showLegend": true,
+      "showXAxis": false,
+      "showInChartValues": false,
+      "showInChartLabels": true,
+      "strokeWidth": 1,
+      "fillOpacity": 0.6,
+      "showXAxisLabel": true,
+      "showYAxisLabel": true,
+      "hexbinRadius": 20,
+      "hexbinNumber": 20,
+      "hexbinRadiusMode": "NUM_HEXAGONS",
+      "chartHeight": 200,
+      "singleXAxis": true,
+      "multiTooltips": false,
+      "animationFrameDuration": 3000,
+      "animationRepeat": true,
+      "colorOptions": {
+        "singleColor": "#2678B1",
+        "transparency": 1.0,
+        "colorPalette": "Set1",
+        "ccScaleMode": "NORMAL",
+        "customPalette": {
+          "id": "__dku_custom__",
+          "name": "Custom Palette",
+          "colors": [],
+          "values": [],
+          "fixedValues": false
+        },
+        "paletteType": "CONTINUOUS",
+        "quantizationMode": "NONE",
+        "numQuantizeSteps": 5,
+        "paletteMiddleValue": 0.0
+      },
+      "bubblesOptions": {
+        "defaultRadius": 5.0,
+        "singleShape": "EMPTY_CIRCLE"
+      },
+      "xAxisMode": "NORMAL",
+      "yAxisMode": "NORMAL",
+      "pieOptions": {
+        "donutHoleSize": 54.0
+      },
+      "scatterOptions": {
+        "equalScales": false,
+        "identityLine": false
+      },
+      "mapOptions": {
+        "tilesLayer": "cartodb-positron",
+        "lockSquareGrid": false
+      },
+      "mapGridOptions": {
+        "gridLonDeg": 0.5,
+        "gridLatDeg": 0.5
+      },
+      "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAACqklEQVRoQ+2ZzWvUQBjG38lWQQVBaQ+CJz31IAiWyYoWChYyWbz05D8gHrx6Eruzu5OKJ68exD/CgzSzWJHiB5lYRRBvKnjx4nrw0lJqMxJkpay7m5lkkiZ295qZ93l+88xHMovggP3QAeOFCfD/nnjuCduUSwnwGiRcRAiQYGSsJm767xCg8xIAkAVSdEjNZAi5ANuU/wSA40lwqiCY8m0EcDiS0cIbr7Gu2m9YO2PAcZKxgCnIUVCY8nUEMC8YsdKAZwYuCnQQrk75JwlwTDBySgc8E/D87dWZF/ca33UETbfF1G+HzG2r1k0NbFO+K5jZDUXV9D9pLz+dhdpuO+iQa0k1tIHnmqs3NrzGw6TC+/HcpvyXYGRqnLY28H6A6GheWH529u3Klc+j+mgBxxtU3ruwDtywtnOtJ2c2Ole/ZAauAmwfElO+EzJyKNdzOGsyRfVXmtKY+mshcxeLMmVCZ9SMVAKu0+6jgDnXTRgpqkYmYJv6m4K5R4sya0IHU/4qZOTSYC2lhKu0YfUB7Tv+ZXHXfZkOuNndFJ5TqYQzTunyn7+DSWYCNrGmylJDaQ3HZqu0jse9UysDlyUhFR+45d8PO+6tzG9aVUg5yaN2wkkFVRLIq41NeU8wMm3887CM0JjyByEjN5MGUzvhvwc75VuCkSNJAkU81wkgNXAfpE75h4CRc0WAqZ61xqf0EOEeSDgpvHRXp7qDZVMeSYAfISMzun0zJ7xXEFP+zZJoKfAcoWtEpX28KUmA9yEjqT9VjQLvNR3fagJA/A/EibTXQrjJe6FHpnXWaNLA5QY8KLzQej61Jbd3JMBHC6AWMDL7B8SxbNqNBHJqtux+BYDTMoqWwpXG4yTzaZ4XBpzGXB59JsB5jGqZak4SLlMaeXiZJJzHqJap5m8j5fgpFCD0PwAAAABJRU5ErkJggg\u003d\u003d",
+      "disableSafetyLimits": false,
+      "useLiveProcessingIfAvailable": true,
+      "legendPlacement": "OUTER_RIGHT"
+    },
+    "maxDataBytes": 157286400
+  },
+  "owner": "mmiyazaki",
+  "listed": false,
+  "name": "開花日までの日数_コサイン vs 開花日までの日数_サイン on days_till_bloom_cos_sin",
+  "dashboardCreationId": "rIMln0K",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614965989438
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614965989438
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

@@ -1,0 +1,319 @@
+{
+  "centileShuffle": false,
+  "centileSplits": [
+    {
+      "outputIndex": 0,
+      "share": 50
+    }
+  ],
+  "preFilter": {
+    "distinct": false,
+    "enabled": false
+  },
+  "defaultOutputIndex": -1,
+  "seed": 1337,
+  "randomColumns": [],
+  "centileOrders": [],
+  "rangeSetTime": false,
+  "randomSplits": [
+    {
+      "outputIndex": 0,
+      "share": 50
+    }
+  ],
+  "randomColumnsSplits": [
+    {
+      "outputIndex": 0,
+      "share": 50
+    }
+  ],
+  "computedColumns": [],
+  "writeComputedColumnsInOutput": false,
+  "mode": "FILTERS",
+  "centileTDigest": false,
+  "valueSplits": [
+    {
+      "outputIndex": 0,
+      "caseSensitive": false
+    }
+  ],
+  "rangeSplits": [
+    {
+      "filter": {
+        "uiData": {
+          "mode": "\u0026\u0026",
+          "conditions": []
+        },
+        "distinct": false,
+        "enabled": true
+      },
+      "outputIndex": 0
+    }
+  ],
+  "engineParams": {
+    "hive": {
+      "skipPrerunValidate": false,
+      "hiveconf": [],
+      "inheritConf": "default",
+      "addDkuUdf": false,
+      "executionEngine": "HIVESERVER2"
+    },
+    "sqlPipelineParams": {
+      "pipelineAllowMerge": true,
+      "pipelineAllowStart": true
+    },
+    "impala": {
+      "forceStreamMode": true
+    },
+    "lowerCaseSchemaIfEngineRequiresIt": true,
+    "sparkSQL": {
+      "skipPrerunValidate": false,
+      "pipelineAllowMerge": true,
+      "useGlobalMetastore": false,
+      "pipelineAllowStart": true,
+      "readParams": {
+        "mode": "AUTO",
+        "autoModeRepartitionInto": 10,
+        "map": {}
+      },
+      "overwriteOutputSchema": false,
+      "executionEngine": "SPARK_SUBMIT",
+      "sparkConfig": {
+        "inheritConf": "default",
+        "conf": []
+      }
+    }
+  },
+  "filterSplits": [
+    {
+      "filter": {
+        "uiData": {
+          "mode": "\u0026\u0026",
+          "conditions": [
+            {
+              "input": "開花日までの日数",
+              "col": "年月日_parsed",
+              "num": 0,
+              "operator": "not empty string"
+            }
+          ]
+        },
+        "$status": {
+          "schema": {
+            "columns": [
+              {
+                "name": "年月日",
+                "type": "string"
+              },
+              {
+                "name": "年月日_parsed",
+                "type": "date"
+              },
+              {
+                "name": "年",
+                "type": "bigint"
+              },
+              {
+                "name": "日照時間",
+                "type": "double"
+              },
+              {
+                "name": "場所",
+                "type": "string"
+              },
+              {
+                "name": "降水量合計",
+                "type": "double"
+              },
+              {
+                "name": "平均気温",
+                "type": "double"
+              },
+              {
+                "name": "最高気温",
+                "type": "double"
+              },
+              {
+                "name": "最低気温",
+                "type": "double"
+              },
+              {
+                "name": "状況",
+                "type": "string"
+              },
+              {
+                "name": "開花日",
+                "type": "string"
+              },
+              {
+                "name": "開花日_parsed",
+                "type": "date"
+              },
+              {
+                "name": "年初からの日数",
+                "type": "double"
+              },
+              {
+                "name": "開花年",
+                "type": "double"
+              },
+              {
+                "name": "開花日までの日数",
+                "type": "double"
+              },
+              {
+                "name": "年初からの日数_暦年平均",
+                "type": "double"
+              },
+              {
+                "name": "平均気温推移",
+                "type": "string"
+              },
+              {
+                "name": "最高気温推移",
+                "type": "string"
+              },
+              {
+                "name": "最低気温推移",
+                "type": "string"
+              },
+              {
+                "name": "降水量合計推移",
+                "type": "string"
+              },
+              {
+                "name": "日照時間推移",
+                "type": "string"
+              }
+            ]
+          },
+          "validated": true,
+          "fullyTranslated": false,
+          "ok": false,
+          "message": "Filter expression is invalid"
+        },
+        "distinct": false,
+        "enabled": true
+      },
+      "outputIndex": 0
+    },
+    {
+      "filter": {
+        "uiData": {
+          "mode": "\u0026\u0026",
+          "conditions": [
+            {
+              "input": "開花日までの日数",
+              "col": "年月日_parsed",
+              "num": 2020,
+              "operator": "empty string"
+            },
+            {
+              "input": "年",
+              "col": "年月日_parsed",
+              "num": 2020,
+              "operator": "\u003e\u003d [number]"
+            }
+          ]
+        },
+        "$status": {
+          "schema": {
+            "columns": [
+              {
+                "name": "年月日",
+                "type": "string"
+              },
+              {
+                "name": "年月日_parsed",
+                "type": "date"
+              },
+              {
+                "name": "年",
+                "type": "bigint"
+              },
+              {
+                "name": "日照時間",
+                "type": "double"
+              },
+              {
+                "name": "場所",
+                "type": "string"
+              },
+              {
+                "name": "降水量合計",
+                "type": "double"
+              },
+              {
+                "name": "平均気温",
+                "type": "double"
+              },
+              {
+                "name": "最高気温",
+                "type": "double"
+              },
+              {
+                "name": "最低気温",
+                "type": "double"
+              },
+              {
+                "name": "状況",
+                "type": "string"
+              },
+              {
+                "name": "開花日",
+                "type": "string"
+              },
+              {
+                "name": "開花日_parsed",
+                "type": "date"
+              },
+              {
+                "name": "年初からの日数",
+                "type": "double"
+              },
+              {
+                "name": "開花年",
+                "type": "double"
+              },
+              {
+                "name": "開花日までの日数",
+                "type": "double"
+              },
+              {
+                "name": "年初からの日数_暦年平均",
+                "type": "double"
+              },
+              {
+                "name": "平均気温推移",
+                "type": "string"
+              },
+              {
+                "name": "最高気温推移",
+                "type": "string"
+              },
+              {
+                "name": "最低気温推移",
+                "type": "string"
+              },
+              {
+                "name": "降水量合計推移",
+                "type": "string"
+              },
+              {
+                "name": "日照時間推移",
+                "type": "string"
+              }
+            ]
+          },
+          "validated": true,
+          "fullyTranslated": false,
+          "ok": false,
+          "message": "Filter expression is invalid"
+        },
+        "distinct": false,
+        "enabled": true
+      },
+      "outputIndex": 1
+    }
+  ]
+}

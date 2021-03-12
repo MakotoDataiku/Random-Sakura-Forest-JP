@@ -1,0 +1,172 @@
+{
+  "type": "chart",
+  "params": {
+    "datasetSmartName": "future_kaikabi",
+    "engineType": "LINO",
+    "refreshableSelection": {
+      "selection": {
+        "useMemTable": false,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "def": {
+      "type": "scatter",
+      "variant": "normal",
+      "name": "開花日予測の推移",
+      "userEditedName": true,
+      "genericDimension0": [],
+      "genericDimension1": [],
+      "facetDimension": [],
+      "animationDimension": [],
+      "genericMeasures": [],
+      "xDimension": [],
+      "yDimension": [],
+      "uaXDimension": [
+        {
+          "column": "年月日_parsed",
+          "type": "DATE",
+          "treatAsAlphanum": false,
+          "dateMode": "RANGE",
+          "sortBy": "NATURAL",
+          "sortAscending": false,
+          "isA": "ua"
+        }
+      ],
+      "uaYDimension": [
+        {
+          "column": "開花日",
+          "type": "DATE",
+          "treatAsAlphanum": false,
+          "dateMode": "RANGE",
+          "sortBy": "NATURAL",
+          "sortAscending": false,
+          "isA": "ua"
+        }
+      ],
+      "uaSize": [],
+      "uaShape": [],
+      "uaColor": [
+        {
+          "column": "場所",
+          "type": "ALPHANUM",
+          "treatAsAlphanum": false,
+          "isA": "ua",
+          "adminLevel": 0
+        }
+      ],
+      "uaTooltip": [],
+      "groupDimension": [],
+      "xMeasure": [],
+      "yMeasure": [],
+      "colorMeasure": [],
+      "sizeMeasure": [],
+      "geometry": [],
+      "tooltipMeasures": [],
+      "boxplotBreakdownDim": [],
+      "boxplotValue": [],
+      "filters": [],
+      "axis1LogScale": false,
+      "axis2LogScale": false,
+      "includeZero": true,
+      "smoothing": true,
+      "showLegend": true,
+      "showXAxis": false,
+      "showInChartValues": false,
+      "showInChartLabels": true,
+      "strokeWidth": 1,
+      "fillOpacity": 0.6,
+      "showXAxisLabel": true,
+      "showYAxisLabel": true,
+      "hexbinRadius": 20,
+      "hexbinNumber": 20,
+      "hexbinRadiusMode": "NUM_HEXAGONS",
+      "chartHeight": 200,
+      "singleXAxis": true,
+      "multiTooltips": false,
+      "animationFrameDuration": 3000,
+      "animationRepeat": true,
+      "colorOptions": {
+        "singleColor": "#2678B1",
+        "transparency": 1.0,
+        "colorPalette": "Set1",
+        "ccScaleMode": "NORMAL",
+        "customPalette": {
+          "id": "__dku_custom__",
+          "name": "Custom Palette",
+          "colors": [],
+          "values": [],
+          "fixedValues": false
+        },
+        "paletteType": "CONTINUOUS",
+        "quantizationMode": "NONE",
+        "numQuantizeSteps": 5,
+        "paletteMiddleValue": 0.0
+      },
+      "bubblesOptions": {
+        "defaultRadius": 5.0,
+        "singleShape": "EMPTY_CIRCLE"
+      },
+      "xAxisMode": "NORMAL",
+      "yAxisMode": "NORMAL",
+      "pieOptions": {
+        "donutHoleSize": 54.0
+      },
+      "scatterOptions": {
+        "equalScales": false,
+        "identityLine": false
+      },
+      "mapOptions": {
+        "tilesLayer": "cartodb-positron",
+        "lockSquareGrid": false
+      },
+      "mapGridOptions": {
+        "gridLonDeg": 0.5,
+        "gridLatDeg": 0.5
+      },
+      "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAACHUlEQVRoQ+2RP0gCURzH72ll0FBTf/SMhqaGtrK2IjA9O0shm4KCICgwgqYiJYOmQBBCBKHIpT/DmZenDlFjNUT/xobAU6KlpaDCfBEkhFS+04ve4bvpuPu+3/t8fl9AldkDysyXIsK4Nm5wxVdPPKa57/jMPkETczIvKOz/1nDHYsypUlFNFAQNAMBrmKU6KLVqD2aztacec6BzMb59umwaQZGQkpFFuMd9WHG01Jv56WKDKz594jGtSQH7q2xRwtuO9vmRncsVOaDYPUuIH4yOyjELZYYk4fFAX2R98sD6MZjlmARvE/o/34O8TZgY4Bg3fAOhKlXVY4Z6nuHtsYV8CGuY8funzq/eANA0p1Le3H9Rp/fSqeTsb9BJLe0GANQBCB90adGTnx0MM4aB/bu2ieDZpmNnWL3r2H3Nz0gSRtng10xKS9/r0mJ97tsQZ2oJ2+K3heawHDPG24QNNmLu4q2x4+/yxoSxpvqpko3Yo1uF5n39jyTMcpaAf/qinU6L3bnDSS3t06dFp5TLcMgiCeMAKhcDEZZrk7jOQWo4SdOtelG8wVVCCheSsJSBuGeJMO4NlcpHGi51g7ifJw3j3lCpfAUbZqJMo2AR7kq9CJfzBYVxAZWLgwjLtUlc5xTXMISAAgDiKvUbV3HCSjT9ZCbCCi4PCZ00jLQmBYdIwwouDwmdNIy0JgWHSMMKLg8JnTSMtCYFh8qu4XeRcIYp4kek+QAAAABJRU5ErkJggg\u003d\u003d",
+      "disableSafetyLimits": false,
+      "useLiveProcessingIfAvailable": true,
+      "legendPlacement": "OUTER_RIGHT"
+    },
+    "maxDataBytes": 157286400
+  },
+  "owner": "mmiyazaki",
+  "listed": false,
+  "name": "開花日予測の推移 on future_kaikabi",
+  "dashboardCreationId": "rIMln0K",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614300903164
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614300903164
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

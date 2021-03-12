@@ -1,0 +1,65 @@
+{
+  "name": "ディープラーニング",
+  "color": "#4B8021",
+  "items": [
+    {
+      "objectId": "train_LSTM_on_past",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "kU0XvNCs",
+      "objectType": "SAVED_MODEL"
+    },
+    {
+      "objectId": "score_future_2",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "future_with_LSTM",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_future_blooming_day_1_1",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "LSTM_prepared",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "past_lstm",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "future_lstm",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "split_vectorized_past_1",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "vectorized_past",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_vectorized_past",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "past",
+      "objectType": "DATASET"
+    }
+  ],
+  "shared": [
+    {
+      "objectId": "past_windows",
+      "objectType": "DATASET"
+    }
+  ],
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

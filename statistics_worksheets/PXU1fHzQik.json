@@ -1,0 +1,210 @@
+{
+  "dataSpec": {
+    "inputDatasetSmartName": "days_till_bloom_cos_sin",
+    "datasetSelection": {
+      "useMemTable": false,
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "partitionSelectionMethod": "ALL",
+      "latestPartitionsN": 1,
+      "ordering": {
+        "enabled": false,
+        "rules": []
+      },
+      "samplingMethod": "RANDOM_FIXED_RATIO",
+      "maxRecords": 100000,
+      "targetRatio": 0.5,
+      "withinFirstN": -1,
+      "maxReadUncompressedBytes": -1
+    },
+    "autoRefreshSample": true,
+    "refreshTrigger": 1,
+    "containerSelection": {
+      "containerMode": "INHERIT"
+    }
+  },
+  "rootCard": {
+    "type": "worksheet_root",
+    "confidenceLevel": 0.95,
+    "showConfidenceInterval": false,
+    "cards": [
+      {
+        "type": "correlation_matrix",
+        "heatmapParams": {
+          "showValues": false,
+          "showColors": true,
+          "showAbsValues": false,
+          "threshold": 0.0
+        },
+        "metric": "SPEARMAN",
+        "columns": [
+          {
+            "name": "年間通算日",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "年",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "月",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "日",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "日照時間",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "降水量合計",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "平均気温",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "最高気温",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "最低気温",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "年初からの日数_暦年平均",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "日照時間_直近１ヶ月平均",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "降水量合計_直近１ヶ月平均",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "平均気温_直近１ヶ月平均",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "最高気温_直近１ヶ月平均",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "最低気温_直近１ヶ月平均",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "日照時間_直近３ヶ月平均",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "降水量合計_直近３ヶ月平均",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "平均気温_直近３ヶ月平均",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "最高気温_直近３ヶ月平均",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "最低気温_直近３ヶ月平均",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "日照時間_直近半年平均",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "降水量合計_直近半年平均",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "平均気温_直近半年平均",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "最高気温_直近半年平均",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "最低気温_直近半年平均",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "年初からの日数",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "開花日までの日数",
+            "type": "CONTINUOUS"
+          }
+        ],
+        "id": "eJyo2p6"
+      },
+      {
+        "type": "correlation_matrix",
+        "heatmapParams": {
+          "showValues": true,
+          "showColors": true,
+          "showAbsValues": false,
+          "threshold": 0.0
+        },
+        "metric": "SPEARMAN",
+        "columns": [
+          {
+            "name": "降水量合計",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "日照時間",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "平均気温",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "最高気温",
+            "type": "CONTINUOUS"
+          },
+          {
+            "name": "最低気温",
+            "type": "CONTINUOUS"
+          }
+        ],
+        "id": "Pyr1SnW"
+      }
+    ],
+    "id": "zoPyqdM"
+  },
+  "name": "Worksheet",
+  "versionTag": {
+    "versionNumber": 3,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1615396721408
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1615396479432
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

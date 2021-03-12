@@ -1,0 +1,170 @@
+{
+  "type": "chart",
+  "params": {
+    "datasetSmartName": "evaluated_joiend_prep",
+    "engineType": "LINO",
+    "refreshableSelection": {
+      "selection": {
+        "useMemTable": false,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "FULL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 1
+    },
+    "def": {
+      "type": "scatter",
+      "variant": "normal",
+      "name": "開花日までの日数 vs 開花日までの日数_predicted",
+      "userEditedName": false,
+      "genericDimension0": [],
+      "genericDimension1": [],
+      "facetDimension": [],
+      "animationDimension": [],
+      "genericMeasures": [],
+      "xDimension": [],
+      "yDimension": [],
+      "uaXDimension": [
+        {
+          "column": "開花日までの日数",
+          "type": "NUMERICAL",
+          "treatAsAlphanum": false,
+          "sortBy": "NATURAL",
+          "sortAscending": false,
+          "isA": "ua"
+        }
+      ],
+      "uaYDimension": [
+        {
+          "column": "開花日までの日数_predicted",
+          "type": "NUMERICAL",
+          "treatAsAlphanum": false,
+          "sortBy": "NATURAL",
+          "sortAscending": false,
+          "isA": "ua"
+        }
+      ],
+      "uaSize": [],
+      "uaShape": [],
+      "uaColor": [
+        {
+          "column": "場所",
+          "type": "ALPHANUM",
+          "treatAsAlphanum": false,
+          "isA": "ua",
+          "adminLevel": 0
+        }
+      ],
+      "uaTooltip": [],
+      "groupDimension": [],
+      "xMeasure": [],
+      "yMeasure": [],
+      "colorMeasure": [],
+      "sizeMeasure": [],
+      "geometry": [],
+      "tooltipMeasures": [],
+      "boxplotBreakdownDim": [],
+      "boxplotValue": [],
+      "filters": [],
+      "axis1LogScale": false,
+      "axis2LogScale": false,
+      "includeZero": true,
+      "smoothing": true,
+      "showLegend": true,
+      "showXAxis": false,
+      "showInChartValues": false,
+      "showInChartLabels": true,
+      "strokeWidth": 1,
+      "fillOpacity": 0.6,
+      "showXAxisLabel": true,
+      "showYAxisLabel": true,
+      "hexbinRadius": 20,
+      "hexbinNumber": 20,
+      "hexbinRadiusMode": "NUM_HEXAGONS",
+      "chartHeight": 200,
+      "singleXAxis": true,
+      "multiTooltips": false,
+      "animationFrameDuration": 3000,
+      "animationRepeat": true,
+      "colorOptions": {
+        "singleColor": "#2678B1",
+        "transparency": 0.4,
+        "colorPalette": "Set1",
+        "ccScaleMode": "NORMAL",
+        "customPalette": {
+          "id": "__dku_custom__",
+          "name": "Custom Palette",
+          "colors": [],
+          "values": [],
+          "fixedValues": false
+        },
+        "paletteType": "CONTINUOUS",
+        "quantizationMode": "NONE",
+        "numQuantizeSteps": 5,
+        "paletteMiddleValue": 0.0
+      },
+      "bubblesOptions": {
+        "defaultRadius": 5.0,
+        "singleShape": "EMPTY_CIRCLE"
+      },
+      "xAxisMode": "NORMAL",
+      "yAxisMode": "NORMAL",
+      "pieOptions": {
+        "donutHoleSize": 54.0
+      },
+      "scatterOptions": {
+        "equalScales": false,
+        "identityLine": true
+      },
+      "mapOptions": {
+        "tilesLayer": "cartodb-positron",
+        "lockSquareGrid": false
+      },
+      "mapGridOptions": {
+        "gridLonDeg": 0.5,
+        "gridLatDeg": 0.5
+      },
+      "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAADf0lEQVRoQ+3YbUgTcRwH8N//znJbD6D57JmU9iYyw15I0hNmxZ6E0lnkiyjrjVtFIYnD1KKkvYiixN16oBcVlelWpIFlGVFQWLrZE4Ulbbe7JbUsnOVsd7EeIKJyurndqfd6d//f576///9+DME4u9B48paVlWWOK7A33DEP1mq18dXV1cyvTvYJXF66yr1fd32yUNpfYZSfBQQbgA0Dg/pRTaKD2j4ssFCguUYZzWIoAjgIn2PM6itvOk3McHZ9+r1+nxIWAlhpkvdzAKIUU9bH3S36+kSa2vq3ugUPVppk7RygBV6codj8JpGxz/pfQIIFq1pVUwecLgeLIQmpNlOA4ABhtxuG6kZBgnNN8jsswGIxEzd4ZH9zO8ehmwRjKx8KK7jPktIku80BWuotXKmPuS9/0mLL23qy48He1Qd9wQoGrDDK9BhAEYtQGKk2NwKAhKDtOb4iBXVKK+rXUoAPJCAOQa3afAXHUFuC3VY9EiyvE5bWSaPDMczxFQdEaswZwGH7CNqWO1IorwcPpVHZzyFWxHYtAsNhsjmJpqT+QnkJVprkRRzACW9xZLGlm2ColEBBeQeWntvkwSU9SHVsumt5172ZyVbrh0BjebGHZRcKPVh4L0IeHGo17TVJvw36Yw4sr89nEf4Z9BpLW5KdyhwN4J/PDMmkJT23uR+XvBXF9LhhX9XzNoIJDjboLS07X2jGRL3zvx9KaouZoKmMYKQaksFjhUE7KI6x4GSxmcM5PC3eYX0WbGxQEl55aqcrPPKl2Dsp6TWWDoK2LQwFdNQ/S5l7ms9EpZOFCHdD7TZL70yKigwldFTB2WRlnyT2oST6nRuqKl4sTWasd/mADXhLZ5NV7yWxbRE/DqXOHoK2xfEFGtCEFVcV6dwXcQcK64eVJwj3jmsGEd+gAQPnHC/ziKI7UeprF1ty6FUDQdvW8RXrd0srTHL256D/lGCoND5D/UpYfrHAgSa7YnJu9Qzm1TOVSQzl818soX4pwxotpWe3EPgUxuotWnV0unNj6/moUAOGu75P4BLdsq7H8XNnT5pmheTLS0B741hdIm1fP9zFQvV7VZ0Kv1RwyePzHvbu1SO7HjtTu62CSVTRIM33DERV4GLnvMY1TZhfezhUSQVi3X+2dGlpaY1Op9MEYhE+PcOnPcyngv2tZQLs7xvk+/0TCfM9IX/r+wba2Cna8iUqbwAAAABJRU5ErkJggg\u003d\u003d",
+      "disableSafetyLimits": false,
+      "useLiveProcessingIfAvailable": true,
+      "legendPlacement": "OUTER_RIGHT"
+    },
+    "maxDataBytes": 157286400
+  },
+  "owner": "mmiyazaki",
+  "listed": false,
+  "name": "開花日までの日数 vs 開花日までの日数_predicted on evaluated_joiend_prep",
+  "dashboardCreationId": "rIMln0K",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614957703281
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614957703281
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

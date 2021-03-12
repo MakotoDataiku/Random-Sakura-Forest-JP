@@ -1,0 +1,222 @@
+{
+  "script": {
+    "steps": [],
+    "maxProcessedMemTableBytes": -1,
+    "columnsSelection": {
+      "mode": "ALL"
+    },
+    "columnWidthsByName": {
+      "年月日": 100,
+      "年月日_parsed": 183,
+      "年間通算日": 100,
+      "年": 100,
+      "月": 100,
+      "日": 100,
+      "日照時間": 100,
+      "場所": 100,
+      "降水量合計": 100,
+      "平均気温": 100,
+      "最高気温": 100,
+      "最低気温": 100,
+      "状況": 100,
+      "開花日": 183,
+      "開花日_cleaned": 134,
+      "開花日_parsed": 100,
+      "年初からの日数": 100,
+      "開花年": 100,
+      "開花日までの日数": 141,
+      "年初からの日数_暦年平均": 141,
+      "日照時間_直近１ヶ月平均": 141,
+      "降水量合計_直近１ヶ月平均": 148,
+      "平均気温_直近１ヶ月平均": 162,
+      "最高気温_直近１ヶ月平均": 162,
+      "最低気温_直近１ヶ月平均": 155,
+      "日照時間_直近３ヶ月平均": 141,
+      "降水量合計_直近３ヶ月平均": 141,
+      "平均気温_直近３ヶ月平均": 155,
+      "最高気温_直近３ヶ月平均": 141,
+      "最低気温_直近３ヶ月平均": 162,
+      "日照時間_直近半年平均": 141,
+      "降水量合計_直近半年平均": 141,
+      "平均気温_直近半年平均": 141,
+      "最高気温_直近半年平均": 141,
+      "最低気温_直近半年平均": 162,
+      "予測_サイン": 169,
+      "予測_コサイン": 169,
+      "ラジアン": 148,
+      "予測_コサイン_radiant": 155
+    },
+    "coloring": {
+      "scheme": "MEANING_AND_STATUS",
+      "individualColumns": [],
+      "valueColoringMode": "HASH"
+    },
+    "sorting": [
+      {
+        "column": "年月日_parsed",
+        "ascending": false
+      }
+    ],
+    "analysisColumnData": {},
+    "explorationSampling": {
+      "selection": {
+        "maxStoredBytes": 104857600,
+        "timeout": -1,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "vizSampling": {
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "exploreUIParams": {
+      "autoRefresh": true
+    },
+    "globalSearchQuery": "",
+    "explorationFilters": [],
+    "previewMode": "ALL_ROWS"
+  },
+  "charts": [
+    {
+      "copySelectionFromScript": true,
+      "engineType": "LINO",
+      "def": {
+        "type": "scatter",
+        "variant": "normal",
+        "name": "開花日予測の推移",
+        "userEditedName": true,
+        "genericDimension0": [],
+        "genericDimension1": [],
+        "facetDimension": [],
+        "animationDimension": [],
+        "genericMeasures": [],
+        "xDimension": [],
+        "yDimension": [],
+        "uaXDimension": [
+          {
+            "column": "年月日_parsed",
+            "type": "DATE",
+            "treatAsAlphanum": false,
+            "dateMode": "RANGE",
+            "sortBy": "NATURAL",
+            "sortAscending": false,
+            "isA": "ua"
+          }
+        ],
+        "uaYDimension": [
+          {
+            "column": "開花日",
+            "type": "DATE",
+            "treatAsAlphanum": false,
+            "dateMode": "RANGE",
+            "sortBy": "NATURAL",
+            "sortAscending": false,
+            "isA": "ua"
+          }
+        ],
+        "uaSize": [],
+        "uaShape": [],
+        "uaColor": [
+          {
+            "column": "場所",
+            "type": "ALPHANUM",
+            "treatAsAlphanum": false,
+            "isA": "ua",
+            "adminLevel": 0
+          }
+        ],
+        "uaTooltip": [],
+        "groupDimension": [],
+        "xMeasure": [],
+        "yMeasure": [],
+        "colorMeasure": [],
+        "sizeMeasure": [],
+        "geometry": [],
+        "tooltipMeasures": [],
+        "boxplotBreakdownDim": [],
+        "boxplotValue": [],
+        "filters": [],
+        "axis1LogScale": false,
+        "axis2LogScale": false,
+        "includeZero": true,
+        "smoothing": true,
+        "showLegend": true,
+        "showXAxis": false,
+        "showInChartValues": false,
+        "showInChartLabels": true,
+        "strokeWidth": 1,
+        "fillOpacity": 0.6,
+        "showXAxisLabel": true,
+        "showYAxisLabel": true,
+        "hexbinRadius": 20,
+        "hexbinNumber": 20,
+        "hexbinRadiusMode": "NUM_HEXAGONS",
+        "chartHeight": 200,
+        "singleXAxis": true,
+        "multiTooltips": false,
+        "animationFrameDuration": 3000,
+        "animationRepeat": true,
+        "colorOptions": {
+          "singleColor": "#2678B1",
+          "transparency": 0.7,
+          "colorPalette": "Set1",
+          "ccScaleMode": "NORMAL",
+          "customPalette": {
+            "id": "__dku_custom__",
+            "name": "Custom Palette",
+            "colors": [],
+            "values": [],
+            "fixedValues": false
+          },
+          "paletteType": "CONTINUOUS",
+          "quantizationMode": "NONE",
+          "numQuantizeSteps": 5,
+          "paletteMiddleValue": 0.0
+        },
+        "bubblesOptions": {
+          "defaultRadius": 5.0,
+          "singleShape": "EMPTY_CIRCLE"
+        },
+        "computeMode": "NORMAL",
+        "xAxisMode": "NORMAL",
+        "yAxisMode": "NORMAL",
+        "pieOptions": {
+          "donutHoleSize": 54.0
+        },
+        "scatterOptions": {
+          "equalScales": false,
+          "identityLine": false
+        },
+        "mapOptions": {
+          "tilesLayer": "cartodb-positron",
+          "lockSquareGrid": false
+        },
+        "mapGridOptions": {
+          "gridLonDeg": 0.6,
+          "gridLatDeg": 0.6
+        },
+        "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAAB0UlEQVRoQ+3SzUpbQRwF8HPmjjdqTUAJtJaUdiG4EbpSfAEVChFcdtFH8AkEa+0j9CG6cyPix1Yo+LURN4K4aNMgKCk0H5rcO/MvEYQu2jLELDLNZHeTP5dzzi9En33YZ30RCv/v4l0Rnl3d+S6CCEQW4C0gFYA5QH4CyLZ/I5kAEABfAXkJQt0/ARkAZYAFQL6AvIYFoMwKRB0DMBAeHnxcWHrAmH2//SpJ2EScJCdrxZv299Mruy84CM2WHBkVzRx/mLv8E96jC8+s7i4fri988uWf0XHh4sabUq6ajutU0ruM0mOVVlrJxwOJVlYbK9mqMdlqon6MxjARtSXlSSM1Ay1bq41Eg6JUbBTZjME4pbTxrSIolqlSXNy6Ot2Zf7o/cVH/dvo693bo1kxlmsZGBlIbjrTVhIgwspSxSrNRH9EZEEwi8vO7Pf03gI4Kl54Xzgvl0qQvqr/n7Kiwj0UfMofCPuu5ZA/CLiv5fBOEfdZzyR6EXVby+SYI+6znkj0Iu6zk800Q9lnPJXsQdlnJ55sg7LOeS/Yg7LKSzzdB2Gc9l+xB+F8rFTeLeaT2bHNp65nLmr14E4R7UaWbmYJwN9fsxXcF4V5U6WamvhP+BfL0hSnLK5CzAAAAAElFTkSuQmCC",
+        "disableSafetyLimits": false,
+        "useLiveProcessingIfAvailable": true,
+        "legendPlacement": "OUTER_RIGHT"
+      },
+      "maxDataBytes": 157286400
+    }
+  ]
+}

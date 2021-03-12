@@ -1,0 +1,383 @@
+{
+  "columnsSelection": {
+    "mode": "ALL"
+  },
+  "explorationSampling": {
+    "_refreshTrigger": 3,
+    "selection": {
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "latestPartitionsN": 1,
+      "maxRecords": 10000,
+      "ordering": {
+        "rules": [],
+        "enabled": false
+      },
+      "withinFirstN": -1,
+      "partitionSelectionMethod": "ALL",
+      "maxStoredBytes": 104857600,
+      "targetRatio": 1.0,
+      "maxReadUncompressedBytes": -1,
+      "samplingMethod": "RANDOM_FIXED_RATIO",
+      "timeout": -1
+    },
+    "autoRefreshSample": false
+  },
+  "explorationFilters": [],
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "FindReplace",
+      "params": {
+        "output": "",
+        "mapping": [
+          {
+            "from": "--",
+            "to": "0.0"
+          },
+          {
+            "from": "///",
+            "to": "0.0"
+          },
+          {
+            "from": "]",
+            "to": ""
+          },
+          {
+            "from": ")",
+            "to": ""
+          },
+          {
+            "from": "×",
+            "to": "0.0"
+          }
+        ],
+        "normalization": "EXACT",
+        "columns": [
+          "precip_total",
+          "daylight",
+          "temp_ave",
+          "temp_high",
+          "temp_low"
+        ],
+        "appliesTo": "COLUMNS",
+        "stopAfterFirstMatch": false,
+        "matching": "SUBSTRING"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": true,
+      "type": "FindReplace",
+      "params": {
+        "output": "",
+        "mapping": [
+          {
+            "from": "東京",
+            "to": "Tokyo"
+          },
+          {
+            "from": "大分",
+            "to": "Oita"
+          },
+          {
+            "from": "弘前",
+            "to": "Hirosaki"
+          }
+        ],
+        "normalization": "EXACT",
+        "columns": [
+          "place"
+        ],
+        "appliesTo": "SINGLE_COLUMN",
+        "stopAfterFirstMatch": false,
+        "matching": "SUBSTRING"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": true,
+      "type": "FindReplace",
+      "params": {
+        "output": "",
+        "mapping": [
+          {
+            "from": " )",
+            "to": ""
+          }
+        ],
+        "normalization": "EXACT",
+        "columns": [
+          "temp_high"
+        ],
+        "appliesTo": "SINGLE_COLUMN",
+        "stopAfterFirstMatch": false,
+        "matching": "SUBSTRING"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": true,
+      "type": "FindReplace",
+      "params": {
+        "output": "",
+        "mapping": [
+          {
+            "from": " ]",
+            "to": ""
+          }
+        ],
+        "normalization": "EXACT",
+        "columns": [
+          "daylight"
+        ],
+        "appliesTo": "ALL",
+        "stopAfterFirstMatch": false,
+        "matching": "SUBSTRING"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": true,
+      "type": "FindReplace",
+      "params": {
+        "output": "",
+        "mapping": [
+          {
+            "from": " )",
+            "to": ""
+          }
+        ],
+        "normalization": "EXACT",
+        "columns": [
+          "daylight"
+        ],
+        "appliesTo": "ALL",
+        "stopAfterFirstMatch": false,
+        "matching": "SUBSTRING"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": true,
+      "type": "FindReplace",
+      "params": {
+        "output": "",
+        "mapping": [
+          {
+            "from": "///",
+            "to": "0.0"
+          },
+          {
+            "from": "",
+            "to": ""
+          }
+        ],
+        "normalization": "EXACT",
+        "columns": [
+          "daylight"
+        ],
+        "appliesTo": "ALL",
+        "stopAfterFirstMatch": false,
+        "matching": "SUBSTRING"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": true,
+      "type": "FindReplace",
+      "params": {
+        "output": "",
+        "mapping": [
+          {
+            "from": "×",
+            "to": "0"
+          }
+        ],
+        "normalization": "EXACT",
+        "columns": [
+          "temp_low"
+        ],
+        "appliesTo": "ALL",
+        "stopAfterFirstMatch": false,
+        "matching": "SUBSTRING"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnRenamer",
+      "params": {
+        "renamings": [
+          {
+            "from": "date",
+            "to": "年月日"
+          },
+          {
+            "from": "daylight",
+            "to": "日照時間"
+          },
+          {
+            "from": "place",
+            "to": "場所"
+          },
+          {
+            "from": "precip_total",
+            "to": "降水量合計"
+          },
+          {
+            "from": "temp_ave",
+            "to": "平均気温"
+          },
+          {
+            "from": "temp_high",
+            "to": "最高気温"
+          },
+          {
+            "from": "temp_low",
+            "to": "最低気温"
+          }
+        ]
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": true,
+      "type": "FindReplace",
+      "params": {
+        "output": "",
+        "mapping": [
+          {
+            "from": "Tokyo",
+            "to": "東京"
+          },
+          {
+            "from": "Oita",
+            "to": "大分"
+          },
+          {
+            "from": "Hirosaki",
+            "to": "弘前"
+          }
+        ],
+        "normalization": "EXACT",
+        "columns": [
+          "場所"
+        ],
+        "appliesTo": "SINGLE_COLUMN",
+        "stopAfterFirstMatch": false,
+        "matching": "SUBSTRING"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "CreateColumnWithGREL",
+      "params": {
+        "expression": "replace(日照時間, \" \", \"\")",
+        "column": "日照時間"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "CreateColumnWithGREL",
+      "params": {
+        "expression": "replace(降水量合計, \" \", \"\")",
+        "column": "降水量合計"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "CreateColumnWithGREL",
+      "params": {
+        "expression": "replace(平均気温, \" \", \"\")",
+        "column": "平均気温"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "CreateColumnWithGREL",
+      "params": {
+        "expression": "replace(最高気温, \" \", \"\")",
+        "column": "最高気温"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": true,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "CreateColumnWithGREL",
+      "params": {
+        "expression": "replace(最低気温, \" \", \"\")",
+        "column": "最低気温"
+      },
+      "alwaysShowComment": false
+    }
+  ],
+  "maxProcessedMemTableBytes": -1,
+  "previewMode": "ALL_ROWS",
+  "vizSampling": {
+    "_refreshTrigger": 0,
+    "autoRefreshSample": false
+  },
+  "analysisColumnData": {},
+  "columnWidthsByName": {
+    "date": 100,
+    "平均気温": 100,
+    "precip_total": 105,
+    "temp_high": 100,
+    "場所": 100,
+    "降水量合計": 100,
+    "最低気温": 100,
+    "最高気温": 100,
+    "temp_ave": 100,
+    "daylight": 100,
+    "place": 100,
+    "日照時間": 100,
+    "temp_low": 100,
+    "年月日": 100
+  },
+  "sorting": [],
+  "globalSearchQuery": "",
+  "coloring": {
+    "scheme": "MEANING_AND_STATUS",
+    "individualColumns": [],
+    "valueColoringMode": "HASH"
+  }
+}

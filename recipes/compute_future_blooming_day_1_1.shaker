@@ -1,0 +1,154 @@
+{
+  "columnsSelection": {
+    "mode": "ALL"
+  },
+  "explorationSampling": {
+    "_refreshTrigger": 0,
+    "selection": {
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "latestPartitionsN": 1,
+      "maxRecords": 10000,
+      "ordering": {
+        "rules": [],
+        "enabled": false
+      },
+      "withinFirstN": -1,
+      "partitionSelectionMethod": "ALL",
+      "maxStoredBytes": 104857600,
+      "targetRatio": 0.02,
+      "maxReadUncompressedBytes": -1,
+      "samplingMethod": "HEAD_SEQUENTIAL",
+      "timeout": -1
+    },
+    "autoRefreshSample": false
+  },
+  "explorationFilters": [],
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "CreateColumnWithGREL",
+      "params": {
+        "expression": "inc(年月日_parsed, prediction, \"day\")",
+        "column": "開花日"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "CreateColumnWithGREL",
+      "params": {
+        "expression": "開花日",
+        "column": "開花日_cleaned"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "FindReplace",
+      "params": {
+        "output": "",
+        "mapping": [
+          {
+            "from": "T00:00:00.000Z",
+            "to": ""
+          }
+        ],
+        "normalization": "EXACT",
+        "columns": [
+          "開花日_cleaned"
+        ],
+        "appliesTo": "SINGLE_COLUMN",
+        "stopAfterFirstMatch": false,
+        "matching": "SUBSTRING"
+      },
+      "alwaysShowComment": false
+    }
+  ],
+  "maxProcessedMemTableBytes": -1,
+  "previewMode": "ALL_ROWS",
+  "vizSampling": {
+    "_refreshTrigger": 0,
+    "autoRefreshSample": false
+  },
+  "analysisColumnData": {},
+  "columnWidthsByName": {
+    "date": 100,
+    "blooming_day": 202,
+    "平均気温推移": 300,
+    "降水量合計_直近１ヶ月平均": 148,
+    "year": 100,
+    "precip_total": 105,
+    "past_temp_high": 300,
+    "場所": 100,
+    "平均気温_直近１ヶ月平均": 162,
+    "blooming_day_parsed": 158,
+    "開花日_parsed": 100,
+    "最低気温推移": 300,
+    "降水量合計_直近３ヶ月平均": 141,
+    "開花日_cleaned": 134,
+    "flower_status": 113,
+    "最低気温_直近１ヶ月平均": 155,
+    "平均気温_直近半年平均": 141,
+    "平均気温_直近３ヶ月平均": 155,
+    "blooming_day_cleaned": 190,
+    "past_temp_ave": 300,
+    "past_low_temp": 300,
+    "daylight": 100,
+    "past_temp_low": 300,
+    "past_ave_temp": 300,
+    "prediction": 141,
+    "past_precip": 300,
+    "日照時間": 100,
+    "年月日": 100,
+    "最低気温_直近半年平均": 162,
+    "最高気温_直近１ヶ月平均": 162,
+    "状況": 100,
+    "最高気温_直近半年平均": 141,
+    "temp_high": 100,
+    "日照時間推移": 300,
+    "降水量合計": 100,
+    "最低気温": 100,
+    "最低気温_直近３ヶ月平均": 162,
+    "temp_ave": 100,
+    "past_precip_total": 300,
+    "最高気温_直近３ヶ月平均": 141,
+    "place": 100,
+    "temp_low": 100,
+    "past_daylight": 300,
+    "年初からの日数_暦年平均": 141,
+    "開花日": 181,
+    "date_parsed": 232,
+    "最高気温推移": 300,
+    "平均気温": 100,
+    "days_till_bloom": 128,
+    "年月日_parsed": 232,
+    "降水量合計推移": 300,
+    "最高気温": 100,
+    "開花年": 100,
+    "開花日までの日数": 100,
+    "年": 100,
+    "past_high_temp": 300,
+    "降水量合計_直近半年平均": 141,
+    "年初からの日数": 100
+  },
+  "sorting": [],
+  "globalSearchQuery": "",
+  "coloring": {
+    "scheme": "MEANING_AND_STATUS",
+    "individualColumns": [],
+    "valueColoringMode": "HASH"
+  }
+}

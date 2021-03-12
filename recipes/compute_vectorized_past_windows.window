@@ -1,0 +1,707 @@
+{
+  "preFilter": {
+    "distinct": false,
+    "enabled": false
+  },
+  "ntileValues": "10",
+  "keys": [],
+  "values": [
+    {
+      "last": false,
+      "lagDiff": false,
+      "max": false,
+      "firstLastNotNull": false,
+      "column": "年月日",
+      "count": false,
+      "$idx": 0,
+      "lagValues": "1",
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "lead": false,
+      "concatDistinct": false,
+      "dateDiffUnit": "DAY",
+      "min": false,
+      "countDistinct": false,
+      "avg": false,
+      "lag": false,
+      "leadValues": "1",
+      "stddev": false,
+      "value": true,
+      "leadDiff": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "lagDiff": false,
+      "max": false,
+      "firstLastNotNull": false,
+      "column": "年月日_parsed",
+      "count": false,
+      "$idx": 1,
+      "lagValues": "1",
+      "sum": false,
+      "concat": false,
+      "type": "date",
+      "lead": false,
+      "concatDistinct": false,
+      "dateDiffUnit": "DAY",
+      "min": false,
+      "countDistinct": false,
+      "avg": false,
+      "lag": false,
+      "leadValues": "1",
+      "stddev": false,
+      "value": true,
+      "leadDiff": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "lagDiff": false,
+      "max": false,
+      "firstLastNotNull": false,
+      "column": "年",
+      "count": false,
+      "$idx": 2,
+      "lagValues": "1",
+      "sum": false,
+      "concat": false,
+      "type": "bigint",
+      "lead": false,
+      "concatDistinct": false,
+      "dateDiffUnit": "DAY",
+      "min": false,
+      "countDistinct": false,
+      "avg": false,
+      "lag": false,
+      "leadValues": "1",
+      "stddev": false,
+      "value": true,
+      "leadDiff": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "lagDiff": false,
+      "max": false,
+      "column": "月",
+      "count": false,
+      "$idx": 3,
+      "sum": false,
+      "concat": false,
+      "type": "bigint",
+      "lead": false,
+      "min": false,
+      "avg": false,
+      "lag": false,
+      "$selected": false,
+      "stddev": false,
+      "value": true,
+      "leadDiff": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "lagDiff": false,
+      "max": false,
+      "column": "日",
+      "count": false,
+      "$idx": 4,
+      "sum": false,
+      "concat": false,
+      "type": "bigint",
+      "lead": false,
+      "min": false,
+      "avg": false,
+      "lag": false,
+      "$selected": false,
+      "stddev": false,
+      "value": true,
+      "leadDiff": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "lagDiff": false,
+      "max": false,
+      "firstLastNotNull": false,
+      "column": "日照時間",
+      "count": false,
+      "$idx": 5,
+      "lagValues": "1",
+      "sum": false,
+      "concat": false,
+      "type": "double",
+      "lead": false,
+      "concatDistinct": false,
+      "dateDiffUnit": "DAY",
+      "min": false,
+      "countDistinct": false,
+      "avg": true,
+      "lag": false,
+      "leadValues": "1",
+      "$selected": false,
+      "stddev": false,
+      "value": true,
+      "leadDiff": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "lagDiff": false,
+      "max": false,
+      "firstLastNotNull": false,
+      "column": "場所",
+      "count": false,
+      "$idx": 6,
+      "lagValues": "1",
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "lead": false,
+      "concatDistinct": false,
+      "dateDiffUnit": "DAY",
+      "min": false,
+      "countDistinct": false,
+      "avg": false,
+      "lag": false,
+      "leadValues": "1",
+      "stddev": false,
+      "value": true,
+      "leadDiff": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "lagDiff": false,
+      "max": false,
+      "firstLastNotNull": false,
+      "column": "降水量合計",
+      "count": false,
+      "$idx": 7,
+      "lagValues": "1",
+      "sum": false,
+      "concat": false,
+      "type": "double",
+      "lead": false,
+      "concatDistinct": false,
+      "dateDiffUnit": "DAY",
+      "min": false,
+      "countDistinct": false,
+      "avg": true,
+      "lag": false,
+      "leadValues": "1",
+      "$selected": false,
+      "stddev": false,
+      "value": true,
+      "leadDiff": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "lagDiff": false,
+      "max": false,
+      "firstLastNotNull": false,
+      "column": "平均気温",
+      "count": false,
+      "$idx": 8,
+      "lagValues": "1",
+      "sum": false,
+      "concat": false,
+      "type": "double",
+      "lead": false,
+      "concatDistinct": false,
+      "dateDiffUnit": "DAY",
+      "min": false,
+      "countDistinct": false,
+      "avg": true,
+      "lag": false,
+      "leadValues": "1",
+      "$selected": false,
+      "stddev": false,
+      "value": true,
+      "leadDiff": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "lagDiff": false,
+      "max": false,
+      "firstLastNotNull": false,
+      "column": "最高気温",
+      "count": false,
+      "$idx": 9,
+      "lagValues": "1",
+      "sum": false,
+      "concat": false,
+      "type": "double",
+      "lead": false,
+      "concatDistinct": false,
+      "dateDiffUnit": "DAY",
+      "min": false,
+      "countDistinct": false,
+      "avg": true,
+      "lag": false,
+      "leadValues": "1",
+      "$selected": false,
+      "stddev": false,
+      "value": true,
+      "leadDiff": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "lagDiff": false,
+      "max": false,
+      "firstLastNotNull": false,
+      "column": "最低気温",
+      "count": false,
+      "$idx": 10,
+      "lagValues": "1",
+      "sum": false,
+      "concat": false,
+      "type": "double",
+      "lead": false,
+      "concatDistinct": false,
+      "dateDiffUnit": "DAY",
+      "min": false,
+      "countDistinct": false,
+      "avg": true,
+      "lag": false,
+      "leadValues": "1",
+      "$selected": false,
+      "stddev": false,
+      "value": true,
+      "leadDiff": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "lagDiff": false,
+      "max": false,
+      "firstLastNotNull": false,
+      "column": "状況",
+      "count": false,
+      "$idx": 11,
+      "lagValues": "1",
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "lead": false,
+      "concatDistinct": false,
+      "dateDiffUnit": "DAY",
+      "min": false,
+      "countDistinct": false,
+      "avg": false,
+      "lag": false,
+      "leadValues": "1",
+      "stddev": false,
+      "value": true,
+      "leadDiff": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "lagDiff": false,
+      "max": false,
+      "firstLastNotNull": false,
+      "column": "開花日",
+      "count": false,
+      "$idx": 12,
+      "lagValues": "1",
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "lead": false,
+      "concatDistinct": false,
+      "dateDiffUnit": "DAY",
+      "min": false,
+      "countDistinct": false,
+      "avg": false,
+      "lag": false,
+      "leadValues": "1",
+      "stddev": false,
+      "value": true,
+      "leadDiff": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "lagDiff": false,
+      "max": false,
+      "firstLastNotNull": false,
+      "column": "開花日_parsed",
+      "count": false,
+      "$idx": 13,
+      "lagValues": "1",
+      "sum": false,
+      "concat": false,
+      "type": "date",
+      "lead": false,
+      "concatDistinct": false,
+      "dateDiffUnit": "DAY",
+      "min": false,
+      "countDistinct": false,
+      "avg": false,
+      "lag": false,
+      "leadValues": "1",
+      "stddev": false,
+      "value": true,
+      "leadDiff": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "lagDiff": false,
+      "max": false,
+      "column": "年初からの日数",
+      "count": false,
+      "$idx": 14,
+      "sum": false,
+      "concat": false,
+      "type": "double",
+      "lead": false,
+      "min": false,
+      "avg": false,
+      "lag": false,
+      "$selected": false,
+      "stddev": false,
+      "value": true,
+      "leadDiff": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "lagDiff": false,
+      "max": false,
+      "column": "開花年",
+      "count": false,
+      "$idx": 15,
+      "sum": false,
+      "concat": false,
+      "type": "double",
+      "lead": false,
+      "min": false,
+      "avg": false,
+      "lag": false,
+      "$selected": false,
+      "stddev": false,
+      "value": true,
+      "leadDiff": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "lagDiff": false,
+      "max": false,
+      "firstLastNotNull": false,
+      "column": "開花日までの日数",
+      "count": false,
+      "$idx": 16,
+      "lagValues": "1",
+      "sum": false,
+      "concat": false,
+      "type": "double",
+      "lead": false,
+      "concatDistinct": false,
+      "dateDiffUnit": "DAY",
+      "min": false,
+      "countDistinct": false,
+      "avg": false,
+      "lag": false,
+      "leadValues": "1",
+      "stddev": false,
+      "value": true,
+      "leadDiff": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "lagDiff": false,
+      "max": false,
+      "column": "年初からの日数_暦年平均",
+      "count": false,
+      "$idx": 17,
+      "sum": false,
+      "concat": false,
+      "type": "double",
+      "lead": false,
+      "min": false,
+      "avg": false,
+      "lag": false,
+      "$selected": false,
+      "stddev": false,
+      "value": true,
+      "leadDiff": false,
+      "first": false
+    }
+  ],
+  "legacyUnboundedWindowStreamBehavior": false,
+  "windows": [
+    {
+      "windowUpperBound": 30,
+      "enablePartitioning": true,
+      "enableOrdering": true,
+      "precedingRows": 0,
+      "limitFollowing": true,
+      "followingRows": 0,
+      "partitioningColumns": [
+        "場所"
+      ],
+      "windowLimitMode": "RANGE",
+      "windowDateRangeUnit": "DAY",
+      "orders": [
+        {
+          "column": "年月日_parsed",
+          "desc": true
+        }
+      ],
+      "limitPreceding": true,
+      "windowLowerBound": 0,
+      "enableLimits": true
+    },
+    {
+      "windowLimitMode": "RANGE",
+      "windowUpperBound": 90,
+      "enablePartitioning": true,
+      "prefix": "w2",
+      "enableOrdering": true,
+      "limitFollowing": true,
+      "windowDateRangeUnit": "DAY",
+      "orders": [
+        {
+          "column": "年月日_parsed",
+          "desc": true
+        }
+      ],
+      "limitPreceding": true,
+      "windowLowerBound": 0,
+      "enableLimits": true,
+      "partitioningColumns": [
+        "場所"
+      ]
+    },
+    {
+      "windowLimitMode": "RANGE",
+      "windowUpperBound": 180,
+      "enablePartitioning": true,
+      "prefix": "w3",
+      "enableOrdering": true,
+      "limitFollowing": true,
+      "windowDateRangeUnit": "DAY",
+      "orders": [
+        {
+          "column": "年月日_parsed",
+          "desc": true
+        }
+      ],
+      "limitPreceding": true,
+      "windowLowerBound": 0,
+      "enableLimits": true,
+      "partitioningColumns": [
+        "場所"
+      ]
+    }
+  ],
+  "computedColumns": [],
+  "postFilter": {
+    "$status": {
+      "schema": {
+        "columns": [
+          {
+            "name": "年月日",
+            "type": "string"
+          },
+          {
+            "name": "年月日_parsed",
+            "type": "date"
+          },
+          {
+            "name": "年",
+            "type": "bigint"
+          },
+          {
+            "name": "月",
+            "type": "bigint"
+          },
+          {
+            "name": "日",
+            "type": "bigint"
+          },
+          {
+            "name": "日照時間",
+            "type": "double"
+          },
+          {
+            "name": "場所",
+            "type": "string"
+          },
+          {
+            "name": "降水量合計",
+            "type": "double"
+          },
+          {
+            "name": "平均気温",
+            "type": "double"
+          },
+          {
+            "name": "最高気温",
+            "type": "double"
+          },
+          {
+            "name": "最低気温",
+            "type": "double"
+          },
+          {
+            "name": "状況",
+            "type": "string"
+          },
+          {
+            "name": "開花日",
+            "type": "string"
+          },
+          {
+            "name": "開花日_parsed",
+            "type": "date"
+          },
+          {
+            "name": "年初からの日数",
+            "type": "double"
+          },
+          {
+            "name": "開花年",
+            "type": "double"
+          },
+          {
+            "name": "開花日までの日数",
+            "type": "double"
+          },
+          {
+            "name": "年初からの日数_暦年平均",
+            "type": "double"
+          },
+          {
+            "name": "日照時間_avg",
+            "type": "double"
+          },
+          {
+            "name": "降水量合計_avg",
+            "type": "double"
+          },
+          {
+            "name": "平均気温_avg",
+            "type": "double"
+          },
+          {
+            "name": "最高気温_avg",
+            "type": "double"
+          },
+          {
+            "name": "最低気温_avg",
+            "type": "double"
+          },
+          {
+            "name": "w2_日照時間_avg",
+            "type": "double"
+          },
+          {
+            "name": "w2_降水量合計_avg",
+            "type": "double"
+          },
+          {
+            "name": "w2_平均気温_avg",
+            "type": "double"
+          },
+          {
+            "name": "w2_最高気温_avg",
+            "type": "double"
+          },
+          {
+            "name": "w2_最低気温_avg",
+            "type": "double"
+          },
+          {
+            "name": "w3_日照時間_avg",
+            "type": "double"
+          },
+          {
+            "name": "w3_降水量合計_avg",
+            "type": "double"
+          },
+          {
+            "name": "w3_平均気温_avg",
+            "type": "double"
+          },
+          {
+            "name": "w3_最高気温_avg",
+            "type": "double"
+          },
+          {
+            "name": "w3_最低気温_avg",
+            "type": "double"
+          }
+        ],
+        "userModified": false
+      }
+    },
+    "distinct": false,
+    "enabled": false
+  },
+  "cumeDist": false,
+  "engineParams": {
+    "hive": {
+      "skipPrerunValidate": false,
+      "hiveconf": [],
+      "inheritConf": "default",
+      "addDkuUdf": false,
+      "executionEngine": "HIVESERVER2"
+    },
+    "sqlPipelineParams": {
+      "pipelineAllowMerge": true,
+      "pipelineAllowStart": true
+    },
+    "impala": {
+      "forceStreamMode": true
+    },
+    "lowerCaseSchemaIfEngineRequiresIt": true,
+    "sparkSQL": {
+      "skipPrerunValidate": false,
+      "pipelineAllowMerge": true,
+      "useGlobalMetastore": false,
+      "pipelineAllowStart": true,
+      "readParams": {
+        "mode": "AUTO",
+        "autoModeRepartitionInto": 10,
+        "map": {}
+      },
+      "overwriteOutputSchema": false,
+      "executionEngine": "SPARK_SUBMIT",
+      "sparkConfig": {
+        "inheritConf": "default",
+        "conf": []
+      }
+    }
+  },
+  "ntile": false,
+  "rank": false,
+  "denseRank": false,
+  "rowNumber": false,
+  "outputColumnNameOverrides": {
+    "最高気温_avg": "最高気温_直近１ヶ月平均",
+    "w3_平均気温_avg": "平均気温_直近半年平均",
+    "w2_最低気温_avg": "最低気温_直近３ヶ月平均",
+    "w2_平均気温_avg": "平均気温_直近３ヶ月平均",
+    "w3_日照時間_avg": "日照時間_直近半年平均",
+    "w2_最高気温_avg": "最高気温_直近３ヶ月平均",
+    "日照時間_avg": "日照時間_直近１ヶ月平均",
+    "w3_最低気温_avg": "最低気温_直近半年平均",
+    "平均気温_avg": "平均気温_直近１ヶ月平均",
+    "w2_日照時間_avg": "日照時間_直近３ヶ月平均",
+    "降水量合計_avg": "降水量合計_直近１ヶ月平均",
+    "最低気温_avg": "最低気温_直近１ヶ月平均",
+    "w3_降水量合計_avg": "降水量合計_直近半年平均",
+    "w3_最高気温_avg": "最高気温_直近半年平均",
+    "w2_降水量合計_avg": "降水量合計_直近３ヶ月平均"
+  }
+}

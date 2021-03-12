@@ -1,0 +1,265 @@
+{
+  "type": "chart",
+  "params": {
+    "datasetSmartName": "past_evaluated",
+    "engineType": "LINO",
+    "refreshableSelection": {
+      "selection": {
+        "useMemTable": false,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "FULL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 1
+    },
+    "def": {
+      "type": "lines",
+      "variant": "normal",
+      "name": "場所ごとの平均誤差の推移",
+      "userEditedName": true,
+      "genericDimension0": [
+        {
+          "column": "年月日_parsed",
+          "type": "DATE",
+          "numParams": {
+            "emptyBinsMode": "AVERAGE"
+          },
+          "dateParams": {
+            "mode": "AUTOMATIC"
+          },
+          "maxValues": 0,
+          "generateOthersCategory": true,
+          "oneTickPerBin": false,
+          "filters": [],
+          "isA": "dimension",
+          "possibleSorts": [
+            {
+              "type": "NATURAL",
+              "label": "Natural ordering",
+              "sortAscending": true
+            },
+            {
+              "type": "AGGREGATION",
+              "measureIdx": 0,
+              "label": "Average of error, descending"
+            },
+            {
+              "type": "AGGREGATION",
+              "measureIdx": 0,
+              "label": "Average of error, ascending",
+              "sortAscending": true
+            },
+            {
+              "type": "AGGREGATION",
+              "measureIdx": 1,
+              "label": "Average of 開花日までの日数, descending"
+            },
+            {
+              "type": "AGGREGATION",
+              "measureIdx": 1,
+              "label": "Average of 開花日までの日数, ascending",
+              "sortAscending": true
+            }
+          ],
+          "sort": {
+            "type": "NATURAL",
+            "label": "Natural ordering",
+            "sortAscending": true
+          }
+        }
+      ],
+      "genericDimension1": [
+        {
+          "column": "場所",
+          "type": "ALPHANUM",
+          "numParams": {
+            "emptyBinsMode": "ZEROS"
+          },
+          "maxValues": 20,
+          "generateOthersCategory": true,
+          "oneTickPerBin": false,
+          "filters": [],
+          "isA": "dimension",
+          "possibleSorts": [
+            {
+              "type": "NATURAL",
+              "label": "Natural ordering",
+              "sortAscending": true
+            },
+            {
+              "type": "AGGREGATION",
+              "measureIdx": 0,
+              "label": "Average of error, descending"
+            },
+            {
+              "type": "AGGREGATION",
+              "measureIdx": 0,
+              "label": "Average of error, ascending",
+              "sortAscending": true
+            },
+            {
+              "type": "AGGREGATION",
+              "measureIdx": 1,
+              "label": "Average of 開花日までの日数, descending"
+            },
+            {
+              "type": "AGGREGATION",
+              "measureIdx": 1,
+              "label": "Average of 開花日までの日数, ascending",
+              "sortAscending": true
+            }
+          ],
+          "sort": {
+            "type": "AGGREGATION",
+            "measureIdx": 0,
+            "label": "Average of error, descending"
+          }
+        }
+      ],
+      "facetDimension": [],
+      "animationDimension": [],
+      "genericMeasures": [
+        {
+          "column": "error",
+          "function": "AVG",
+          "type": "NUMERICAL",
+          "displayed": true,
+          "isA": "measure",
+          "displayAxis": "axis1",
+          "displayType": "column",
+          "computeMode": "NORMAL",
+          "computeModeDim": 0
+        }
+      ],
+      "xDimension": [],
+      "yDimension": [],
+      "uaXDimension": [],
+      "uaYDimension": [],
+      "uaSize": [],
+      "uaShape": [],
+      "uaColor": [],
+      "uaTooltip": [],
+      "groupDimension": [],
+      "xMeasure": [],
+      "yMeasure": [],
+      "colorMeasure": [],
+      "sizeMeasure": [],
+      "geometry": [],
+      "tooltipMeasures": [
+        {
+          "column": "開花日までの日数",
+          "function": "AVG",
+          "type": "NUMERICAL",
+          "displayed": true,
+          "isA": "measure",
+          "displayAxis": "axis1",
+          "displayType": "column",
+          "computeModeDim": 0
+        }
+      ],
+      "boxplotBreakdownDim": [],
+      "boxplotValue": [],
+      "filters": [],
+      "axis1LogScale": false,
+      "axis2LogScale": false,
+      "includeZero": true,
+      "smoothing": true,
+      "showLegend": true,
+      "showXAxis": false,
+      "showInChartValues": false,
+      "showInChartLabels": true,
+      "strokeWidth": 1,
+      "fillOpacity": 0.6,
+      "showXAxisLabel": true,
+      "showYAxisLabel": true,
+      "hexbinRadius": 20,
+      "hexbinNumber": 20,
+      "hexbinRadiusMode": "NUM_HEXAGONS",
+      "chartHeight": 200,
+      "singleXAxis": true,
+      "multiTooltips": false,
+      "animationFrameDuration": 3000,
+      "animationRepeat": true,
+      "colorOptions": {
+        "singleColor": "#2678B1",
+        "transparency": 0.75,
+        "colorPalette": "default",
+        "ccScaleMode": "NORMAL",
+        "customPalette": {
+          "id": "__dku_custom__",
+          "name": "Custom Palette",
+          "colors": [],
+          "values": [],
+          "fixedValues": false
+        },
+        "paletteType": "CONTINUOUS",
+        "quantizationMode": "NONE",
+        "numQuantizeSteps": 5,
+        "paletteMiddleValue": 0.0
+      },
+      "bubblesOptions": {
+        "defaultRadius": 5.0,
+        "singleShape": "FILLED_CIRCLE"
+      },
+      "computeMode": "NORMAL",
+      "xAxisMode": "NORMAL",
+      "yAxisMode": "NORMAL",
+      "pieOptions": {
+        "donutHoleSize": 54.0
+      },
+      "scatterOptions": {
+        "equalScales": false,
+        "identityLine": false
+      },
+      "mapOptions": {
+        "tilesLayer": "cartodb-positron",
+        "lockSquareGrid": false
+      },
+      "mapGridOptions": {
+        "gridLonDeg": 0.5,
+        "gridLatDeg": 0.5
+      },
+      "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAAC4UlEQVRoQ+2YX0hTURjAz+dYhrJZaHZVooVIPgi9TNydYKzNFF2R98qiXoIMBkFWPlghdXaTQH3oz4JAKKgeiob3KqWiORsJbpP2UBBhhDSR5s2MckPJok74cGWN5T8E5Wz38fKdc+/v+53znT+AEuyBBONFSWDajVNlGGOSIgjwZylpVAG7CFHZAH4nDHB7gKjteviVBI7KAFVDurf3Q2pVVcF8whgWh6eL+dKsV4kDPCLX8SXMPQW4PRBQ2/X6f+Y0VUNajAF+FgilHdLnzkUbpwt4WHbypUy9AugaGMuwlefPUAss+eVBzsCYO3yypZZl3NJIOJMr0X6lFlj0yoO8kTFLPtnDsYxJGprcz5XlvKQWWPLKbs7IWJRqLfmmOY7NkugF9snPOZY5qOy4RP/kad6Qc4daYNH/uY837KxUDhFXpfdvr3B7ixaAiQOlgQPNUVGldRc7dcGWmuCNnrEv56vzdyhGO7yyu9bIWJY0TAgBACCxizbBaAsI6OdqzsvzjtzCVEdoVPRNHeXZ7CcraUtwRi0IMx0riV2McblU5F1dQSjLfN84ceopAqQab7E2iz65p6Er8Hq81dqkxC5reMpZ+Sm7vi/v23WjvL3ByxCscYEQsa3qh9YQ7O968MJw5MSB/jdyesU+ZpZgTRsIkcZ4XRFH+nFwzD4iWDsAQrh8ISbvkjvTebjoIc8y1dTN4U7Px201pj3fCdbeAiF8VgHsHhp1W8sKLbsvdD8eb7UeW3i/rOE1yNmwJuQMSoXbaPG0RLC2H4Rwha6x+1ywzXqTPmCMUqRK+STPMnejs57b1L8rdK1igjrg/w0tHfZsDQqmH9QCE4xSQEBxL/OomsOKYeJCKrChuJd5dAK3IzXYUdzLPDqBY6o1detwbLEil7XF0ByOe7dFp2Gs8YAQMcWr2kngDdsmreOHCdYMghAxJ4zhpXJH5ZBOAkdlIGl4HWvHpuwqaXhTalnHn/oLVTwMOAbzuSYAAAAASUVORK5CYII\u003d",
+      "disableSafetyLimits": false,
+      "useLiveProcessingIfAvailable": true,
+      "legendPlacement": "OUTER_RIGHT"
+    },
+    "maxDataBytes": 157286400
+  },
+  "owner": "mmiyazaki",
+  "listed": false,
+  "name": "場所ごとの平均誤差の推移 on past_evaluated",
+  "dashboardCreationId": "rIMln0K",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614871169035
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "mmiyazaki"
+    },
+    "lastModifiedOn": 1614871169035
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

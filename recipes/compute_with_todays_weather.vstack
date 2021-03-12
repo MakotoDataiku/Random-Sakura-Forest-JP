@@ -1,0 +1,99 @@
+{
+  "mode": "UNION",
+  "selectedColumns": [
+    "date",
+    "daylight",
+    "place",
+    "precip_total",
+    "temp_ave",
+    "temp_high",
+    "temp_low"
+  ],
+  "originColumnName": "original_dataset",
+  "engineParams": {
+    "hive": {
+      "skipPrerunValidate": false,
+      "hiveconf": [],
+      "inheritConf": "default",
+      "addDkuUdf": false,
+      "executionEngine": "HIVESERVER2"
+    },
+    "sqlPipelineParams": {
+      "pipelineAllowMerge": true,
+      "pipelineAllowStart": true
+    },
+    "impala": {
+      "forceStreamMode": true
+    },
+    "lowerCaseSchemaIfEngineRequiresIt": true,
+    "sparkSQL": {
+      "skipPrerunValidate": false,
+      "pipelineAllowMerge": true,
+      "useGlobalMetastore": false,
+      "pipelineAllowStart": true,
+      "readParams": {
+        "mode": "AUTO",
+        "autoModeRepartitionInto": 10,
+        "map": {}
+      },
+      "overwriteOutputSchema": false,
+      "executionEngine": "SPARK_SUBMIT",
+      "sparkConfig": {
+        "inheritConf": "default",
+        "conf": []
+      }
+    }
+  },
+  "virtualInputs": [
+    {
+      "preFilter": {},
+      "originLabel": "todays_weather",
+      "index": 0
+    },
+    {
+      "preFilter": {},
+      "originLabel": "historical_tenki_scraped",
+      "index": 1
+    }
+  ],
+  "postFilter": {
+    "$status": {
+      "schema": {
+        "columns": [
+          {
+            "name": "date",
+            "type": "string"
+          },
+          {
+            "name": "daylight",
+            "type": "string"
+          },
+          {
+            "name": "place",
+            "type": "string"
+          },
+          {
+            "name": "precip_total",
+            "type": "string"
+          },
+          {
+            "name": "temp_ave",
+            "type": "string"
+          },
+          {
+            "name": "temp_high",
+            "type": "string"
+          },
+          {
+            "name": "temp_low",
+            "type": "string"
+          }
+        ],
+        "userModified": false
+      }
+    },
+    "distinct": false,
+    "enabled": false
+  },
+  "addOriginColumn": false
+}
